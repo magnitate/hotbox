@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent>
+  <Asset Type="DataTypes.LevelType">
+    <elf>23</elf>
+    <hello>Hello World</hello>
+    <s>
+      <Item>hi</Item>
+      <Item>yo</Item>
+      <Item>sup</Item>
+    </s>
+    <Layers>
+      <LayerOne>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>1024 1430</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Tutorial/back</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+      </LayerOne>
+      <LayerTwo>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>60 1740</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Layer6-3</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>1960 1240</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Layer6-3</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>3360 1800</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Layer6-3</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+      </LayerTwo>
+      <LayerThree></LayerThree>
+      <Collision>
+        <Item Type="DataTypes.CollisionSurface">
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>900 1860</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>collision_slope</AssetName>
+          <Size>0 0 0 0</Size>
+          <BottomSlopePoint>900</BottomSlopePoint>
+          <Width>40</Width>
+          <Height>500</Height>
+          <Visible>true</Visible>
+          <CollisionType>Slope</CollisionType>
+          <BounceVelocityX>0</BounceVelocityX>
+          <BounceVelocityY>0</BounceVelocityY>
+        </Item>
+        <Item Type="DataTypes.CollisionSurface">
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>50 1900</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>collision_surface</AssetName>
+          <Size>0 0 0 0</Size>
+          <BottomSlopePoint>50</BottomSlopePoint>
+          <Width>150</Width>
+          <Height>1400</Height>
+          <Visible>true</Visible>
+          <CollisionType>Impassable</CollisionType>
+          <BounceVelocityX>0</BounceVelocityX>
+          <BounceVelocityY>0</BounceVelocityY>
+        </Item>
+      </Collision>
+    </Layers>
+  </Asset>
+</XnaContent>

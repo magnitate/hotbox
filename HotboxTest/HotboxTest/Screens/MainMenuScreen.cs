@@ -11,7 +11,7 @@
 using Microsoft.Xna.Framework;
 #endregion
 
-namespace HotboxTest
+namespace Hotbox
 {
     /// <summary>
     /// The main menu screen is the first thing displayed when the game starts up.

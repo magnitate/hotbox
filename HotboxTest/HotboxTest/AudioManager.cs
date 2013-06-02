@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 
 
-namespace HotboxTest
+namespace Hotbox
 {
     //class for background music and sound effects
     //using singleton pattern

@@ -14,7 +14,7 @@ using Microsoft.Xna.Framework.Graphics;
 using GameStateManagement;
 #endregion
 
-namespace HotboxTest
+namespace Hotbox
 {
     /// <summary>
     /// Helper class represents a single entry in a MenuScreen. By default this

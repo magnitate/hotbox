@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using GameStateManagement;
 
-namespace HotboxTest.GameObject
+namespace DataTypes
 {
     public class SpriteAnimation : SpriteManager
     {

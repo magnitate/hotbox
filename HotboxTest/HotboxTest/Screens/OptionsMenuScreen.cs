@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 #endregion
 
-namespace HotboxTest
+namespace Hotbox
 {
     /// <summary>
     /// The options screen is brought up over the top of the main menu

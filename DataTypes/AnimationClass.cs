@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace HotboxTest.GameObject
+namespace DataTypes
 {
     public class AnimationClass
     {

@@ -5,12 +5,12 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace HotboxTest.GameObject
+namespace DataTypes
 {
     public enum TileCollision
     {
         /// <summary>
-        /// A slope tile is one which moves the player up a gradient.
+        /// A slope tile is one which moves the player up/down a gradient.
         /// </summary>
         Slope = 0,
 
@@ -28,7 +28,7 @@ namespace HotboxTest.GameObject
         Platform = 2,
 
         /// <summary>
-        /// A bounce tile is one that give the player a jump boost when they land on it.
+        /// A bounce tile is one that give the player a jump boost when they land on top of it.
         /// </summary>
         Bounce = 3,
     }
@@ -39,24 +39,22 @@ namespace HotboxTest.GameObject
         public int Height;
         public bool Visible;
 
-        private float bottomSlopePoint;
+        private float bottomSlopePoint = 0;
         public TileCollision CollisionType;
 
-        public CollisionSurface(Vector2 thePosition, int theWidth, int theHeight, float bottomSlopePoint, TileCollision collisionType)
+        public float BounceVelocityX = 0.0f;
+        public float BounceVelocityY = 0.0f;
+
+        public CollisionSurface()
         {
-            Position = thePosition;
             AssetName = "collision_surface";
-            Width = theWidth;
-            Height = theHeight;
-            BottomSlopePoint = bottomSlopePoint;
-            CollisionType = collisionType;
             Colour = Color.White;
             Visible = true;
         }
 
         public float BottomSlopePoint
         {
-            get { return (Position.X + bottomSlopePoint); }
+            get { return bottomSlopePoint; }
             set { bottomSlopePoint = value; }
         }
 
@@ -75,7 +73,7 @@ namespace HotboxTest.GameObject
         {
             if (Visible)
             {
-                if (bottomSlopePoint == Width)
+                if (bottomSlopePoint == Position.X + Width)
                     theSpritebatch.Draw(mSpriteTexture, BoundingBox(), null, Colour, 0.0f, Vector2.Zero, SpriteEffects.FlipHorizontally, 0);
                 else
                     theSpritebatch.Draw(mSpriteTexture, BoundingBox(), Colour);

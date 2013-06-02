@@ -16,7 +16,7 @@ using Microsoft.Xna.Framework.Media;
 using GameStateManagement;
 #endregion
 
-namespace HotboxTest
+namespace Hotbox
 {
     /// <summary>
     /// The background screen sits behind all the other menu screens.

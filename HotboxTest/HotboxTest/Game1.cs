@@ -12,7 +12,7 @@ using GameStateManagement;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace HotboxTest
+namespace Hotbox
 {
     /// <summary>
     /// Sample showing how to manage different game states, with transitions

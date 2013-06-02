@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
 
-namespace HotboxTest.GameObject
+namespace Hotbox.GameObject
 {
     /// <summary>
     /// A set of helpful methods for working with rectangles.

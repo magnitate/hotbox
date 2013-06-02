@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace HotboxTest
+namespace Hotbox
 {
 #if WINDOWS || XBOX
     static class Program

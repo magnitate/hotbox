@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
 
-namespace HotboxTest.GameObject
+namespace Hotbox.GameObject
 {
     /// <summary>
     /// A set of helpful methods for working with rectangles.
@@ -46,7 +46,7 @@ namespace HotboxTest.GameObject
             return new Vector2(depthX, depthY);
         }
 
-        public static float GetSlopePosition(this Rectangle rectA, Rectangle rectB)
+        public static float GetSlopePosition(Rectangle rectA, Rectangle rectB)
         {
             float y1;
             float y = rectB.Y + rectB.Height;

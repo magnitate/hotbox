@@ -10,7 +10,7 @@
 using System;
 using GameStateManagement;
 
-namespace HotboxTest
+namespace Hotbox
 {
     /// <summary>
     /// Our game's implementation of IScreenFactory which can handle creating the screens

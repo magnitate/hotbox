@@ -6,10 +6,11 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 using GameStateManagement;
+using DataTypes;
 
-namespace HotboxTest.GameObject
+namespace Hotbox.GameObject
 {
-    public class Player : SpriteAnimation
+    public class Player : DataTypes.SpriteAnimation
     {
         PlayerIndex playerIndex;
 
@@ -33,7 +34,7 @@ namespace HotboxTest.GameObject
 
         const float ReviveTimeDefault = 2.0f;
         float reviveTimer = ReviveTimeDefault;
-        GameObject.Player theMedic;
+        Player theMedic;
 
         public bool IsReviving
         {
@@ -230,7 +231,7 @@ namespace HotboxTest.GameObject
         {
             base.LoadContent(theContentManager, theAssetName);
 
-            GameObject.AnimationClass anim = new GameObject.AnimationClass();
+            AnimationClass anim = new AnimationClass();
             anim.Colour = Colour;
 
             AddAnimation("LeftIdle", 1, 4, anim.Copy());
@@ -246,7 +247,7 @@ namespace HotboxTest.GameObject
             Animation = "RightIdle";
         }
 
-        public void Update(GameTime gameTime, InputState input, List<GameObject.Sprite> level)
+        public void Update(GameTime gameTime, InputState input, List<Sprite> level)
         {
             if (IsAlive)
             {
@@ -355,7 +356,7 @@ namespace HotboxTest.GameObject
         /// <summary>
         /// Updates the player's velocity and position based on input, gravity, etc.
         /// </summary>
-        public void ApplyPhysics(GameTime gameTime, List<GameObject.Sprite> level)
+        public void ApplyPhysics(GameTime gameTime, List<Sprite> level)
         {
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
@@ -431,7 +432,7 @@ namespace HotboxTest.GameObject
         private float DoJump(float velocityY, GameTime gameTime)
         {
             // If the player wants to jump
-            if (wantsToJump && lastWallJumped != lastWallCollided)
+            if (wantsToJump)
             {
                 // Begin or continue a jump
                 if ((!wasJumping && (IsOnGround | IsOnWall)) || jumpTime > 0.0f)
@@ -448,7 +449,6 @@ namespace HotboxTest.GameObject
                     else if (Animation.Contains("Right"))
                         Animation = "RightJump";
 
-                    lastWallJumped = lastWallCollided;
                 }
 
                 // If we are in the ascent of the jump
@@ -581,14 +581,14 @@ namespace HotboxTest.GameObject
         /// axis to prevent overlapping. There is some special logic for the Y axis to
         /// handle platforms which behave differently depending on direction of movement.
         /// </summary>
-        private void HandleCollisions(List<GameObject.Sprite> level)
+        private void HandleCollisions(List<Sprite> level)
         {
             Rectangle bounds = BoundingBox();
 
             //Reset flag to search for ground collision.
             isOnGround = false;
 
-            foreach (GameObject.CollisionSurface tile in level)
+            foreach (CollisionSurface tile in level)
             {
                 // If this tile is collidable,
                 if (this.BoundingBox().Intersects(tile.BoundingBox()))
@@ -635,13 +635,9 @@ namespace HotboxTest.GameObject
                             {
                                 // Resolve the collision along the X axis
                                 Position = new Vector2(Position.X + (depth.X - 5), Position.Y);
-                                
-                                lastWallCollided = tile;
-                                
-                                if (tile.Equals(lastWallJumped))
-                                {
-                                    IsOnWall = true;
-                                }
+
+                                IsOnWall = true;
+
                                 //Perform further collisions with the new bounds.
                                 bounds = BoundingBox();
                             }
@@ -688,9 +684,11 @@ namespace HotboxTest.GameObject
                                 if (previousBottom <= tileBounds.Top)
                                 {
                                     IsBouncing = true;
+                                    BounceLaunchVelocityX = tile.BounceVelocityX;
+                                    BounceLaunchVelocityY = tile.BounceVelocityY;
                                 }
 
-                                //Ignore platforms, unless we are on the ground.
+                                //Ignore platforms, unless we are bouncing
                                 if (IsBouncing)
                                 {
                                     // Resolve the collision along the Y axis.

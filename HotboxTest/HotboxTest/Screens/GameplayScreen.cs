@@ -11,15 +11,17 @@
 using System;
 using System.Threading;
 using System.Collections.Generic;
+using System.Reflection;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Audio;
 using GameStateManagement;
+using DataTypes;
 #endregion
 
-namespace HotboxTest
+namespace Hotbox
 {
     /// <summary>
     /// This screen implements the actual game logic. It is just a
@@ -134,8 +136,7 @@ namespace HotboxTest
                 //playerList.Add(playerThree);
                 //playerList.Add(playerFour);
 
-
-
+                
                 //INITIALISING LAYERS
                 _layerDictionary = new Dictionary<string, int>();
 
@@ -153,7 +154,7 @@ namespace HotboxTest
                 _layerDictionary.Add("front", 11);
                 _layerDictionary.Add("near", 12);
                 _layerDictionary.Add("fore", 13);
-
+                
                 // Create 13 layers with parallax ranging from 0% to 100% (only horizontal)
                 _layers = new List<GameObject.Layer>
                 {
@@ -172,7 +173,28 @@ namespace HotboxTest
                     new GameObject.Layer(_camera) { Parallax = new Vector2(1.1f, 1.0f) },
                     new GameObject.Layer(_camera) { Parallax = new Vector2(1.2f, 1.0f) },
                 };
+                
+                
+                LevelType level = content.Load<LevelType>("Levels/tutorial");
+                
+                foreach (Sprite s in level.Layers.LayerOne)
+                {
+                    _layers[0].Sprites.Add(s);
+                }
 
+                if (level.Layers.LayerThree != null)
+                {
+                    foreach (Sprite s in level.Layers.LayerThree)
+                    {
+                        _layers[0].Sprites.Add(s);
+                    }
+                }
+
+                foreach (Sprite s in level.Layers.Collision)
+                {
+                    _layers[9].Sprites.Add(s);
+                }
+                /*
                 //Add the sprites to each layer
                 
                 //CLOUDS
@@ -236,13 +258,13 @@ namespace HotboxTest
                 _layers[_layerDictionary["mid"]].Sprites.Add(new GameObject.Sprite { AssetName = "Tutorial/jumping_post2", Position = new Vector2(2250, 1800) });
                 _layers[_layerDictionary["mid"]].Sprites.Add(new GameObject.Sprite { AssetName = "Tutorial/cart", Position = new Vector2(4670, 1950) });
 
-     
+     */
 
                 //ADD THE PLAYERS TO THE LAYER LIST
                 foreach (GameObject.Player player in playerList)
                     _layers[_layerDictionary["interactive"]].Sprites.Add(player);
 
-
+                /*
 
                 //ADD COLLISION OBJECTS
 
@@ -291,10 +313,11 @@ namespace HotboxTest
                 _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(3900, 1430), 600, 150, 0, GameObject.TileCollision.Impassable));
                 _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(4400, 1550), 100, 600, 0, GameObject.TileCollision.Impassable));
                 _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(4500, 2070), 800, 150, 0, GameObject.TileCollision.Impassable));
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(4470, 1870), 280, 230, 0, GameObject.TileCollision.Bounce));
+                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(4470, 1870), 280, 230, 0, GameObject.TileCollision.Bounce) { BounceVelocityX = -500.0f, BounceVelocityY = -8500.0f });
+                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(4970, 2000), 280, 230, 0, GameObject.TileCollision.Bounce) { BounceVelocityX = -900.0f, BounceVelocityY = -4000.0f });
                 _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(5300, 2070), 15000, 150, 0, GameObject.TileCollision.Impassable));
 
-
+                */
                 //load content for every sprite in the layers
                 foreach (GameObject.Layer layer in _layers)
                 {
@@ -417,7 +440,7 @@ namespace HotboxTest
                     }
                 }
 
-                foreach (GameObject.CollisionSurface c in _layers[_layerDictionary["c"]].Sprites)
+                foreach (CollisionSurface c in _layers[_layerDictionary["c"]].Sprites)
                     if(c.Colour != Color.Transparent)
                         c.Update(gameTime);
             }
@@ -488,7 +511,7 @@ namespace HotboxTest
                 {
                     if (toggleCollisionVisibility.Evaluate(input, pI, out player))
                     {
-                        foreach (GameObject.CollisionSurface c in _layers[_layerDictionary["c"]].Sprites)
+                        foreach (CollisionSurface c in _layers[_layerDictionary["c"]].Sprites)
                         {
                             c.Visible = !c.Visible;
                         }
