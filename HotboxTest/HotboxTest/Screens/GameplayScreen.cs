@@ -176,148 +176,13 @@ namespace Hotbox
                 
                 
                 LevelType level = content.Load<LevelType>("Levels/tutorial");
-                
-                foreach (Sprite s in level.Layers.LayerOne)
-                {
-                    _layers[0].Sprites.Add(s);
-                }
 
-                if (level.Layers.LayerThree != null)
-                {
-                    foreach (Sprite s in level.Layers.LayerThree)
-                    {
-                        _layers[0].Sprites.Add(s);
-                    }
-                }
-
-                foreach (Sprite s in level.Layers.Collision)
-                {
-                    _layers[9].Sprites.Add(s);
-                }
-                /*
-                //Add the sprites to each layer
-                
-                //CLOUDS
-                _layers[_layerDictionary["cloud1"]].Sprites.Add(new GameObject.Sprite { AssetName = "Layer6-3", Position = new Vector2(60, 1740) });
-                _layers[_layerDictionary["cloud2"]].Sprites.Add(new GameObject.Sprite { AssetName = "Layer6-2", Position = new Vector2(960, 1240) });
-                _layers[_layerDictionary["cloud3"]].Sprites.Add(new GameObject.Sprite { AssetName = "Layer6-1", Position = new Vector2(460, 1540) });
-
-                _layers[_layerDictionary["cloud1"]].Sprites.Add(new GameObject.Sprite { AssetName = "Layer6-3", Position = new Vector2(1960, 1240) });
-                _layers[_layerDictionary["cloud2"]].Sprites.Add(new GameObject.Sprite { AssetName = "Layer6-2", Position = new Vector2(1560, 1300) });
-                _layers[_layerDictionary["cloud3"]].Sprites.Add(new GameObject.Sprite { AssetName = "Layer6-1", Position = new Vector2(1860, 1240) });
-
-                _layers[_layerDictionary["cloud1"]].Sprites.Add(new GameObject.Sprite { AssetName = "Layer6-3", Position = new Vector2(2360, 1300) });
-                _layers[_layerDictionary["cloud2"]].Sprites.Add(new GameObject.Sprite { AssetName = "Layer6-2", Position = new Vector2(2560, 1400) });
-                _layers[_layerDictionary["cloud3"]].Sprites.Add(new GameObject.Sprite { AssetName = "Layer6-1", Position = new Vector2(2860, 1340) });
-
-                _layers[_layerDictionary["cloud1"]].Sprites.Add(new GameObject.Sprite { AssetName = "Layer6-3", Position = new Vector2(3360, 1800) });
-                _layers[_layerDictionary["cloud2"]].Sprites.Add(new GameObject.Sprite { AssetName = "Layer6-2", Position = new Vector2(3260, 1900) });
-                _layers[_layerDictionary["cloud3"]].Sprites.Add(new GameObject.Sprite { AssetName = "Layer6-1", Position = new Vector2(2360, 1640) });
-                _layers[_layerDictionary["cloud3"]].Sprites.Add(new GameObject.Sprite { AssetName = "Layer6-1", Position = new Vector2(3360, 2040) });
-
-
-                // BACKGROUD TREES
-                _layers[_layerDictionary["horizon"]].Sprites.Add(new GameObject.Sprite { AssetName = "Layer5-3", Position = new Vector2(960, 1700) });
-                _layers[_layerDictionary["distant"]].Sprites.Add(new GameObject.Sprite { AssetName = "Layer5-2", Position = new Vector2(500, 1700) });
-                _layers[_layerDictionary["far"]].Sprites.Add(new GameObject.Sprite { AssetName = "Layer5-1", Position = new Vector2(600, 1700) });
-
-                _layers[_layerDictionary["horizon"]].Sprites.Add(new GameObject.Sprite { AssetName = "Layer5-3", Position = new Vector2(2260, 1500) });
-                _layers[_layerDictionary["distant"]].Sprites.Add(new GameObject.Sprite { AssetName = "Layer5-2", Position = new Vector2(2500, 1600) });
-                _layers[_layerDictionary["far"]].Sprites.Add(new GameObject.Sprite { AssetName = "Layer5-1", Position = new Vector2(2300, 1400) });
-
-                _layers[_layerDictionary["horizon"]].Sprites.Add(new GameObject.Sprite { AssetName = "Layer5-3", Position = new Vector2(3860, 1700) });
-                _layers[_layerDictionary["distant"]].Sprites.Add(new GameObject.Sprite { AssetName = "Layer5-2", Position = new Vector2(3500, 1700) });
-                _layers[_layerDictionary["far"]].Sprites.Add(new GameObject.Sprite { AssetName = "Layer5-1", Position = new Vector2(2900, 1700) });
-
-                _layers[_layerDictionary["horizon"]].Sprites.Add(new GameObject.Sprite { AssetName = "Layer5-3", Position = new Vector2(4860, 1900) });
-                _layers[_layerDictionary["distant"]].Sprites.Add(new GameObject.Sprite { AssetName = "Layer5-2", Position = new Vector2(4500, 1800) });
-                _layers[_layerDictionary["far"]].Sprites.Add(new GameObject.Sprite { AssetName = "Layer5-1", Position = new Vector2(4900, 1700) });
-                
-                
-                //OTHER OBJECTS
-                _layers[_layerDictionary["back"]].Sprites.Add(new GameObject.Sprite { AssetName = "Tutorial/back", Position = new Vector2(1024, 1430) });
-                
-                //Richards background
-                //_layers[_layerDictionary["mid"]].Sprites.Add(new GameObject.Sprite { AssetName = "Tutorial/back1", Position = new Vector2(2048, 1200) });
-                //_layers[_layerDictionary["mid"]].Sprites.Add(new GameObject.Sprite { AssetName = "Tutorial/back2", Position = new Vector2(6144, 1200) });
-                
-                _layers[_layerDictionary["rear"]].Sprites.Add(new GameObject.Sprite { AssetName = "Tutorial/entrance", Position = new Vector2(300, 1380) });
-                _layers[_layerDictionary["rear"]].Sprites.Add(new GameObject.Sprite { AssetName = "Tutorial/bush", Position = new Vector2(900, 1700) });
-                _layers[_layerDictionary["rear"]].Sprites.Add(new GameObject.Sprite { AssetName = "Tutorial/house", Position = new Vector2(1800, 1380) });
-                _layers[_layerDictionary["rear"]].Sprites.Add(new GameObject.Sprite { AssetName = "Tutorial/tree1", Position = new Vector2(2500, 1425) });
-                _layers[_layerDictionary["rear"]].Sprites.Add(new GameObject.Sprite { AssetName = "Tutorial/windmill", Position = new Vector2(3420, 800) });
-                _layers[_layerDictionary["rear"]].Sprites.Add(new GameObject.Sprite { AssetName = "Tutorial/windmill_fence", Position = new Vector2(4150, 1400) });
-
-
-                _layers[_layerDictionary["mid"]].Sprites.Add(new GameObject.Sprite { AssetName = "Tutorial/mid1", Position = new Vector2(2048, 1938) });
-                _layers[_layerDictionary["mid"]].Sprites.Add(new GameObject.Sprite { AssetName = "Tutorial/mid2", Position = new Vector2(6144, 1938) });
-                _layers[_layerDictionary["mid"]].Sprites.Add(new GameObject.Sprite { AssetName = "Tutorial/mid3", Position = new Vector2(10240, 1938) });
-                _layers[_layerDictionary["mid"]].Sprites.Add(new GameObject.Sprite { AssetName = "Tutorial/mid4", Position = new Vector2(14336, 1938) });
-
-                _layers[_layerDictionary["mid"]].Sprites.Add(new GameObject.Sprite { AssetName = "Tutorial/jumping_post1", Position = new Vector2(1350, 1820) });
-                _layers[_layerDictionary["mid"]].Sprites.Add(new GameObject.Sprite { AssetName = "Tutorial/jumping_post2", Position = new Vector2(2250, 1800) });
-                _layers[_layerDictionary["mid"]].Sprites.Add(new GameObject.Sprite { AssetName = "Tutorial/cart", Position = new Vector2(4670, 1950) });
-
-     */
+                importLayers(level);
 
                 //ADD THE PLAYERS TO THE LAYER LIST
                 foreach (GameObject.Player player in playerList)
                     _layers[_layerDictionary["interactive"]].Sprites.Add(player);
 
-                /*
-
-                //ADD COLLISION OBJECTS
-
-                //bush slope
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(900, 1860), 500, 40, 0, GameObject.TileCollision.Slope) { AssetName = "collision_slope" });
-
-                //house slope
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(2100, 1840), 300, 20, 0, GameObject.TileCollision.Slope) { AssetName = "collision_slope" });
-
-                //windmill hill
-
-                    //second row small
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(2460, 1780), 200, 50, 0, GameObject.TileCollision.Slope) { AssetName = "collision_slope" });
-
-                    //massive one
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(2600, 1400), 720, 440, 0, GameObject.TileCollision.Slope) { AssetName = "collision_slope" });//this is big
-
-                    //original row merged into bigger
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(2400, 1790), 200, 50, 0, GameObject.TileCollision.Slope) { AssetName = "collision_slope" });
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(2600, 1640), 300, 150, 0, GameObject.TileCollision.Slope) { AssetName = "collision_slope" });
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(2900, 1590), 80, 50, 0, GameObject.TileCollision.Slope) { AssetName = "collision_slope" });
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(2980, 1490), 140, 100, 0, GameObject.TileCollision.Slope) { AssetName = "collision_slope" });
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(3120, 1440), 100, 50, 0, GameObject.TileCollision.Slope) { AssetName = "collision_slope" });
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(3220, 1400), 90, 40, 0, GameObject.TileCollision.Slope) { AssetName = "collision_slope" });
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(3310, 1380), 340, 20, 0, GameObject.TileCollision.Slope) { AssetName = "collision_slope" });
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(3650, 1380), 300, 50, 300, GameObject.TileCollision.Slope) { AssetName = "collision_slope" });
-
-                //cart collision
-                //_layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(4470, 1820), 250, 50, 250, GameObject.TileCollision.Slope) { AssetName = "collision_slope" });
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(4730, 1980), 220, 100, 220, GameObject.TileCollision.Slope) { AssetName = "collision_slope" });
-
-
-
-                //FLAT COLLISION
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(50, 1900), 1400, 150, 0, GameObject.TileCollision.Impassable));
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(50, 900), 150, 1000, 0, GameObject.TileCollision.Impassable));
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(450, 1100), 150, 500, 0, GameObject.TileCollision.Impassable));
-
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(1330, 1780), 50, 100, 0, GameObject.TileCollision.Impassable));
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(2230, 1740), 50, 100, 0, GameObject.TileCollision.Impassable));
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(2400, 1840), 920, 150, 0, GameObject.TileCollision.Impassable));
-
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(3310, 1400), 340, 150, 0, GameObject.TileCollision.Impassable));
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(3650, 1430), 300, 150, 0, GameObject.TileCollision.Impassable));
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(1400, 1860), 1000, 150, 0, GameObject.TileCollision.Impassable));
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(3900, 1430), 600, 150, 0, GameObject.TileCollision.Impassable));
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(4400, 1550), 100, 600, 0, GameObject.TileCollision.Impassable));
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(4500, 2070), 800, 150, 0, GameObject.TileCollision.Impassable));
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(4470, 1870), 280, 230, 0, GameObject.TileCollision.Bounce) { BounceVelocityX = -500.0f, BounceVelocityY = -8500.0f });
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(4970, 2000), 280, 230, 0, GameObject.TileCollision.Bounce) { BounceVelocityX = -900.0f, BounceVelocityY = -4000.0f });
-                _layers[_layerDictionary["c"]].Sprites.Add(new GameObject.CollisionSurface(new Vector2(5300, 2070), 15000, 150, 0, GameObject.TileCollision.Impassable));
-
-                */
                 //load content for every sprite in the layers
                 foreach (GameObject.Layer layer in _layers)
                 {
@@ -340,6 +205,89 @@ namespace Hotbox
             }
         }
 
+        /// <summary>
+        /// For each layer contained in a level file, it loads the objects into the layer list
+        /// </summary>
+        /// <param name="level">The data loaded from a level file</param>
+        private void importLayers(LevelType level)
+        {
+            if (level.Layers.Background != null)
+            {
+                foreach (Sprite s in level.Layers.Background)
+                {
+                    _layers[0].Sprites.Add(s);
+                }
+            }
+
+            if (level.Layers.CloudOne != null)
+            {
+                foreach (Sprite s in level.Layers.CloudOne)
+                {
+                    _layers[1].Sprites.Add(s);
+                }
+            }
+
+            if (level.Layers.CloudTwo != null)
+            {
+                foreach (Sprite s in level.Layers.CloudTwo)
+                {
+                    _layers[2].Sprites.Add(s);
+                }
+            }
+
+            if (level.Layers.CloudThree != null)
+            {
+                foreach (Sprite s in level.Layers.CloudThree)
+                {
+                    _layers[3].Sprites.Add(s);
+                }
+            }
+
+            if (level.Layers.Horizon != null)
+            {
+                foreach (Sprite s in level.Layers.Horizon)
+                {
+                    _layers[4].Sprites.Add(s);
+                }
+            }
+
+            if (level.Layers.Distant != null)
+            {
+                foreach (Sprite s in level.Layers.Distant)
+                {
+                    _layers[5].Sprites.Add(s);
+                }
+            }
+
+            if (level.Layers.Far != null)
+            {
+                foreach (Sprite s in level.Layers.Far)
+                {
+                    _layers[6].Sprites.Add(s);
+                }
+            }
+
+            if (level.Layers.Rear != null)
+            {
+                foreach (Sprite s in level.Layers.Rear)
+                {
+                    _layers[7].Sprites.Add(s);
+                }
+            }
+
+            if (level.Layers.Mid != null)
+            {
+                foreach (Sprite s in level.Layers.Mid)
+                {
+                    _layers[8].Sprites.Add(s);
+                }
+            }
+
+            foreach (Sprite s in level.Layers.Collision)
+            {
+                _layers[9].Sprites.Add(s);
+            }
+        }
 
         /// <summary>
         /// Resets the level back to it's starting state

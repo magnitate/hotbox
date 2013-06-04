@@ -9,7 +9,7 @@
       <Item>sup</Item>
     </s>
     <Layers>
-      <LayerOne>
+      <Background>
         <Item>
           <Source>0 0 0 0</Source>
           <Scale>1</Scale>
@@ -19,8 +19,8 @@
           <AssetName>Tutorial/back</AssetName>
           <Size>0 0 0 0</Size>
         </Item>
-      </LayerOne>
-      <LayerTwo>
+      </Background>
+      <CloudOne>
         <Item>
           <Source>0 0 0 0</Source>
           <Scale>1</Scale>
@@ -48,9 +48,327 @@
           <AssetName>Layer6-3</AssetName>
           <Size>0 0 0 0</Size>
         </Item>
-      </LayerTwo>
-      <LayerThree>
-      </LayerThree>
+      </CloudOne>
+      <CloudTwo>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>960 1240</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Layer6-2</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>1560 1300</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Layer6-2</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>2560 1400</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Layer6-2</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>3260 1900</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Layer6-2</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+      </CloudTwo>
+      <CloudThree>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>460 1540</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Layer6-1</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>1860 1240</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Layer6-1</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>2860 1340</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Layer6-1</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>2360 1640</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Layer6-1</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>3360 2040</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Layer6-1</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+      </CloudThree>
+      <Horizon>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>960 1700</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Layer5-3</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>2260 1500</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Layer5-3</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>3860 1700</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Layer5-3</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>4860 1900</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Layer5-3</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+      </Horizon>
+      <Distant>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>500 1700</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Layer5-2</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>2500 1600</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Layer5-2</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>3500 1700</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Layer5-2</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>4500 1800</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Layer5-2</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+      </Distant>
+      <Far>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>600 1700</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Layer5-1</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>2300 1400</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Layer5-1</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>2900 1700</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Layer5-1</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>4900 1700</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Layer5-1</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+      </Far>
+      <Rear>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>300 1380</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Tutorial/entrance</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>900 1700</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Tutorial/bush</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>1800 1380</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Tutorial/house</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>2500 1425</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Tutorial/tree1</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>3420 800</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Tutorial/windmill</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>4150 1400</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Tutorial/windmill_fence</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+      </Rear>
+      <Mid>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>2048 1938</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Tutorial/mid1</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>6144 1938</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Tutorial/mid2</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>10240 1938</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Tutorial/mid3</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>14336 1938</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Tutorial/mid4</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>1350 1820</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Tutorial/jumping_post1</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>2250 1800</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Tutorial/jumping_post2</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+        <Item>
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>4670 1950</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>Tutorial/cart</AssetName>
+          <Size>0 0 0 0</Size>
+        </Item>
+      </Mid>
       <Collision>
         <Item Type="DataTypes.CollisionSurface">
           <Source>0 0 0 0</Source>
@@ -60,7 +378,7 @@
           <Rotation>0</Rotation>
           <AssetName>collision_slope</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>900</BottomSlopePoint>
+          <BottomSlopePoint>0</BottomSlopePoint>
           <Width>500</Width>
           <Height>40</Height>
           <Visible>true</Visible>
@@ -76,7 +394,7 @@
           <Rotation>0</Rotation>
           <AssetName>collision_slope</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>2100</BottomSlopePoint>
+          <BottomSlopePoint>0</BottomSlopePoint>
           <Width>300</Width>
           <Height>20</Height>
           <Visible>true</Visible>
@@ -92,7 +410,7 @@
           <Rotation>0</Rotation>
           <AssetName>collision_slope</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>2460</BottomSlopePoint>
+          <BottomSlopePoint>0</BottomSlopePoint>
           <Width>200</Width>
           <Height>50</Height>
           <Visible>true</Visible>
@@ -108,7 +426,7 @@
           <Rotation>0</Rotation>
           <AssetName>collision_slope</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>2600</BottomSlopePoint>
+          <BottomSlopePoint>0</BottomSlopePoint>
           <Width>720</Width>
           <Height>440</Height>
           <Visible>true</Visible>
@@ -124,7 +442,7 @@
           <Rotation>0</Rotation>
           <AssetName>collision_slope</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>2400</BottomSlopePoint>
+          <BottomSlopePoint>0</BottomSlopePoint>
           <Width>200</Width>
           <Height>50</Height>
           <Visible>true</Visible>
@@ -140,7 +458,7 @@
           <Rotation>0</Rotation>
           <AssetName>collision_slope</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>2600</BottomSlopePoint>
+          <BottomSlopePoint>0</BottomSlopePoint>
           <Width>300</Width>
           <Height>150</Height>
           <Visible>true</Visible>
@@ -156,7 +474,7 @@
           <Rotation>0</Rotation>
           <AssetName>collision_slope</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>2900</BottomSlopePoint>
+          <BottomSlopePoint>0</BottomSlopePoint>
           <Width>80</Width>
           <Height>50</Height>
           <Visible>true</Visible>
@@ -172,7 +490,7 @@
           <Rotation>0</Rotation>
           <AssetName>collision_slope</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>2980</BottomSlopePoint>
+          <BottomSlopePoint>0</BottomSlopePoint>
           <Width>140</Width>
           <Height>100</Height>
           <Visible>true</Visible>
@@ -188,7 +506,7 @@
           <Rotation>0</Rotation>
           <AssetName>collision_slope</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>3120</BottomSlopePoint>
+          <BottomSlopePoint>0</BottomSlopePoint>
           <Width>100</Width>
           <Height>50</Height>
           <Visible>true</Visible>
@@ -204,7 +522,7 @@
           <Rotation>0</Rotation>
           <AssetName>collision_slope</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>3220</BottomSlopePoint>
+          <BottomSlopePoint>0</BottomSlopePoint>
           <Width>90</Width>
           <Height>40</Height>
           <Visible>true</Visible>
@@ -220,7 +538,7 @@
           <Rotation>0</Rotation>
           <AssetName>collision_slope</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>3310</BottomSlopePoint>
+          <BottomSlopePoint>0</BottomSlopePoint>
           <Width>340</Width>
           <Height>20</Height>
           <Visible>true</Visible>
@@ -236,7 +554,7 @@
           <Rotation>0</Rotation>
           <AssetName>collision_slope</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>3950</BottomSlopePoint>
+          <BottomSlopePoint>300</BottomSlopePoint>
           <Width>300</Width>
           <Height>50</Height>
           <Visible>true</Visible>
@@ -252,7 +570,7 @@
           <Rotation>0</Rotation>
           <AssetName>collision_slope</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>4950</BottomSlopePoint>
+          <BottomSlopePoint>220</BottomSlopePoint>
           <Width>220</Width>
           <Height>100</Height>
           <Visible>true</Visible>
@@ -268,7 +586,7 @@
           <Rotation>0</Rotation>
           <AssetName>collision_surface</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>50</BottomSlopePoint>
+          <BottomSlopePoint>0</BottomSlopePoint>
           <Width>1400</Width>
           <Height>150</Height>
           <Visible>true</Visible>
@@ -284,9 +602,9 @@
           <Rotation>0</Rotation>
           <AssetName>collision_surface</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>50</BottomSlopePoint>
-          <Width>150</Width>
-          <Height>1000</Height>
+          <BottomSlopePoint>0</BottomSlopePoint>
+          <Width>1000</Width>
+          <Height>150</Height>
           <Visible>true</Visible>
           <CollisionType>Impassable</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>
@@ -300,7 +618,7 @@
           <Rotation>0</Rotation>
           <AssetName>collision_surface</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>450</BottomSlopePoint>
+          <BottomSlopePoint>0</BottomSlopePoint>
           <Width>150</Width>
           <Height>500</Height>
           <Visible>true</Visible>
@@ -316,7 +634,7 @@
           <Rotation>0</Rotation>
           <AssetName>collision_surface</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>1330</BottomSlopePoint>
+          <BottomSlopePoint>0</BottomSlopePoint>
           <Width>50</Width>
           <Height>100</Height>
           <Visible>true</Visible>
@@ -332,7 +650,7 @@
           <Rotation>0</Rotation>
           <AssetName>collision_surface</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>2230</BottomSlopePoint>
+          <BottomSlopePoint>0</BottomSlopePoint>
           <Width>50</Width>
           <Height>100</Height>
           <Visible>true</Visible>
@@ -348,7 +666,7 @@
           <Rotation>0</Rotation>
           <AssetName>collision_surface</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>2400</BottomSlopePoint>
+          <BottomSlopePoint>0</BottomSlopePoint>
           <Width>920</Width>
           <Height>150</Height>
           <Visible>true</Visible>
@@ -364,7 +682,7 @@
           <Rotation>0</Rotation>
           <AssetName>collision_surface</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>3310</BottomSlopePoint>
+          <BottomSlopePoint>0</BottomSlopePoint>
           <Width>340</Width>
           <Height>150</Height>
           <Visible>true</Visible>
@@ -380,7 +698,7 @@
           <Rotation>0</Rotation>
           <AssetName>collision_surface</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>3650</BottomSlopePoint>
+          <BottomSlopePoint>0</BottomSlopePoint>
           <Width>300</Width>
           <Height>150</Height>
           <Visible>true</Visible>
@@ -396,7 +714,7 @@
           <Rotation>0</Rotation>
           <AssetName>collision_surface</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>1400</BottomSlopePoint>
+          <BottomSlopePoint>0</BottomSlopePoint>
           <Width>1000</Width>
           <Height>150</Height>
           <Visible>true</Visible>
@@ -412,7 +730,7 @@
           <Rotation>0</Rotation>
           <AssetName>collision_surface</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>3900</BottomSlopePoint>
+          <BottomSlopePoint>0</BottomSlopePoint>
           <Width>600</Width>
           <Height>150</Height>
           <Visible>true</Visible>
@@ -428,7 +746,7 @@
           <Rotation>0</Rotation>
           <AssetName>collision_surface</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>4400</BottomSlopePoint>
+          <BottomSlopePoint>0</BottomSlopePoint>
           <Width>100</Width>
           <Height>600</Height>
           <Visible>true</Visible>
@@ -444,8 +762,24 @@
           <Rotation>0</Rotation>
           <AssetName>collision_surface</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>4500</BottomSlopePoint>
+          <BottomSlopePoint>0</BottomSlopePoint>
           <Width>800</Width>
+          <Height>150</Height>
+          <Visible>true</Visible>
+          <CollisionType>Impassable</CollisionType>
+          <BounceVelocityX>0</BounceVelocityX>
+          <BounceVelocityY>0</BounceVelocityY>
+        </Item>
+        <Item Type="DataTypes.CollisionSurface">
+          <Source>0 0 0 0</Source>
+          <Scale>1</Scale>
+          <Position>5300 2070</Position>
+          <Colour>FFFFFFFF</Colour>
+          <Rotation>0</Rotation>
+          <AssetName>collision_surface</AssetName>
+          <Size>0 0 0 0</Size>
+          <BottomSlopePoint>0</BottomSlopePoint>
+          <Width>15000</Width>
           <Height>150</Height>
           <Visible>true</Visible>
           <CollisionType>Impassable</CollisionType>
@@ -460,7 +794,7 @@
           <Rotation>0</Rotation>
           <AssetName>collision_surface</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>4470</BottomSlopePoint>
+          <BottomSlopePoint>0</BottomSlopePoint>
           <Width>280</Width>
           <Height>230</Height>
           <Visible>true</Visible>
@@ -476,29 +810,13 @@
           <Rotation>0</Rotation>
           <AssetName>collision_surface</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>4970</BottomSlopePoint>
+          <BottomSlopePoint>0</BottomSlopePoint>
           <Width>280</Width>
           <Height>230</Height>
           <Visible>true</Visible>
           <CollisionType>Bounce</CollisionType>
           <BounceVelocityX>-900</BounceVelocityX>
           <BounceVelocityY>-4000</BounceVelocityY>
-        </Item>
-        <Item Type="DataTypes.CollisionSurface">
-          <Source>0 0 0 0</Source>
-          <Scale>1</Scale>
-          <Position>5300 2070</Position>
-          <Colour>FFFFFFFF</Colour>
-          <Rotation>0</Rotation>
-          <AssetName>collision_surface</AssetName>
-          <Size>0 0 0 0</Size>
-          <BottomSlopePoint>5300</BottomSlopePoint>
-          <Width>15000</Width>
-          <Height>150</Height>
-          <Visible>true</Visible>
-          <CollisionType>Impassable</CollisionType>
-          <BounceVelocityX>0</BounceVelocityX>
-          <BounceVelocityY>0</BounceVelocityY>
         </Item>
       </Collision>
     </Layers>
