@@ -16,7 +16,7 @@ namespace XmlTest
             XmlWriterSettings settings = new XmlWriterSettings();
             settings.Indent = true;
 
-            using (XmlWriter writer = XmlWriter.Create("tutorial.xml", settings))
+            using (XmlWriter writer = XmlWriter.Create("tutorial2.xml", settings))
             {
                 IntermediateSerializer.Serialize(writer, testData, null);
             }

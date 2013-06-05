@@ -380,7 +380,13 @@
       <Name>DataTypes</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="Levels\tutorial2.xml">
+      <Name>tutorial2</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="Levels\tutorial.xml">
       <Name>tutorial</Name>

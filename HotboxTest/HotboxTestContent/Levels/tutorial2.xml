@@ -378,7 +378,7 @@
           <Rotation>0</Rotation>
           <AssetName>collision_slope</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>900</BottomSlopePoint>
+          <BottomSlopePoint>0</BottomSlopePoint>
           <Width>500</Width>
           <Height>40</Height>
           <Visible>true</Visible>
@@ -587,8 +587,8 @@
           <AssetName>collision_surface</AssetName>
           <Size>0 0 0 0</Size>
           <BottomSlopePoint>0</BottomSlopePoint>
-          <Width>1400</Width>
-          <Height>150</Height>
+          <Width>150</Width>
+          <Height>1400</Height>
           <Visible>true</Visible>
           <CollisionType>Impassable</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>
@@ -603,8 +603,8 @@
           <AssetName>collision_surface</AssetName>
           <Size>0 0 0 0</Size>
           <BottomSlopePoint>0</BottomSlopePoint>
-          <Width>1000</Width>
-          <Height>150</Height>
+          <Width>150</Width>
+          <Height>1000</Height>
           <Visible>true</Visible>
           <CollisionType>Impassable</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>

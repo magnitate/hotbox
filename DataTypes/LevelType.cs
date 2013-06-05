@@ -131,7 +131,7 @@ namespace DataTypes
 
                 //FLAT COLLISION
                 new CollisionSurface(){ Position = new Vector2(50, 1900), Width = 150, Height = 1400, CollisionType = TileCollision.Impassable },
-                new CollisionSurface(){ Position = new Vector2(50, 900), Width = 1000, Height = 150, CollisionType = TileCollision.Impassable },
+                new CollisionSurface(){ Position = new Vector2(50, 900), Width = 150, Height = 1000, CollisionType = TileCollision.Impassable },
                 new CollisionSurface(){ Position = new Vector2(450, 1100), Width = 150, Height = 500, CollisionType = TileCollision.Impassable },
 
                 new CollisionSurface(){ Position = new Vector2(1330, 1780), Width = 50, Height = 100, CollisionType = TileCollision.Impassable },
