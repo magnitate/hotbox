@@ -378,13 +378,15 @@
           <Rotation>0</Rotation>
           <AssetName>collision_slope</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>0</BottomSlopePoint>
+          <BottomSlopePoint>1300</BottomSlopePoint>
           <Width>500</Width>
-          <Height>40</Height>
+          <Height>400</Height>
           <Visible>true</Visible>
-          <CollisionType>Slope</CollisionType>
+          <CollisionType>Slide</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>
           <BounceVelocityY>0</BounceVelocityY>
+          <SlideBoost>0</SlideBoost>
+          <SlideDirection>0</SlideDirection>
         </Item>
         <Item Type="DataTypes.CollisionSurface">
           <Source>0 0 0 0</Source>
@@ -394,13 +396,15 @@
           <Rotation>0</Rotation>
           <AssetName>collision_slope</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>0</BottomSlopePoint>
+          <BottomSlopePoint>2100</BottomSlopePoint>
           <Width>300</Width>
           <Height>20</Height>
           <Visible>true</Visible>
           <CollisionType>Slope</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>
           <BounceVelocityY>0</BounceVelocityY>
+          <SlideBoost>0</SlideBoost>
+          <SlideDirection>0</SlideDirection>
         </Item>
         <Item Type="DataTypes.CollisionSurface">
           <Source>0 0 0 0</Source>
@@ -410,13 +414,15 @@
           <Rotation>0</Rotation>
           <AssetName>collision_slope</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>0</BottomSlopePoint>
+          <BottomSlopePoint>2460</BottomSlopePoint>
           <Width>200</Width>
           <Height>50</Height>
           <Visible>true</Visible>
           <CollisionType>Slope</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>
           <BounceVelocityY>0</BounceVelocityY>
+          <SlideBoost>0</SlideBoost>
+          <SlideDirection>0</SlideDirection>
         </Item>
         <Item Type="DataTypes.CollisionSurface">
           <Source>0 0 0 0</Source>
@@ -426,13 +432,15 @@
           <Rotation>0</Rotation>
           <AssetName>collision_slope</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>0</BottomSlopePoint>
+          <BottomSlopePoint>2600</BottomSlopePoint>
           <Width>720</Width>
           <Height>440</Height>
           <Visible>true</Visible>
           <CollisionType>Slope</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>
           <BounceVelocityY>0</BounceVelocityY>
+          <SlideBoost>0</SlideBoost>
+          <SlideDirection>0</SlideDirection>
         </Item>
         <Item Type="DataTypes.CollisionSurface">
           <Source>0 0 0 0</Source>
@@ -442,13 +450,15 @@
           <Rotation>0</Rotation>
           <AssetName>collision_slope</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>0</BottomSlopePoint>
+          <BottomSlopePoint>2400</BottomSlopePoint>
           <Width>200</Width>
           <Height>50</Height>
           <Visible>true</Visible>
           <CollisionType>Slope</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>
           <BounceVelocityY>0</BounceVelocityY>
+          <SlideBoost>0</SlideBoost>
+          <SlideDirection>0</SlideDirection>
         </Item>
         <Item Type="DataTypes.CollisionSurface">
           <Source>0 0 0 0</Source>
@@ -458,13 +468,15 @@
           <Rotation>0</Rotation>
           <AssetName>collision_slope</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>0</BottomSlopePoint>
+          <BottomSlopePoint>2600</BottomSlopePoint>
           <Width>300</Width>
           <Height>150</Height>
           <Visible>true</Visible>
           <CollisionType>Slope</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>
           <BounceVelocityY>0</BounceVelocityY>
+          <SlideBoost>0</SlideBoost>
+          <SlideDirection>0</SlideDirection>
         </Item>
         <Item Type="DataTypes.CollisionSurface">
           <Source>0 0 0 0</Source>
@@ -474,13 +486,15 @@
           <Rotation>0</Rotation>
           <AssetName>collision_slope</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>0</BottomSlopePoint>
+          <BottomSlopePoint>2900</BottomSlopePoint>
           <Width>80</Width>
           <Height>50</Height>
           <Visible>true</Visible>
           <CollisionType>Slope</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>
           <BounceVelocityY>0</BounceVelocityY>
+          <SlideBoost>0</SlideBoost>
+          <SlideDirection>0</SlideDirection>
         </Item>
         <Item Type="DataTypes.CollisionSurface">
           <Source>0 0 0 0</Source>
@@ -490,13 +504,15 @@
           <Rotation>0</Rotation>
           <AssetName>collision_slope</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>0</BottomSlopePoint>
+          <BottomSlopePoint>2980</BottomSlopePoint>
           <Width>140</Width>
           <Height>100</Height>
           <Visible>true</Visible>
           <CollisionType>Slope</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>
           <BounceVelocityY>0</BounceVelocityY>
+          <SlideBoost>0</SlideBoost>
+          <SlideDirection>0</SlideDirection>
         </Item>
         <Item Type="DataTypes.CollisionSurface">
           <Source>0 0 0 0</Source>
@@ -506,13 +522,15 @@
           <Rotation>0</Rotation>
           <AssetName>collision_slope</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>0</BottomSlopePoint>
+          <BottomSlopePoint>3120</BottomSlopePoint>
           <Width>100</Width>
           <Height>50</Height>
           <Visible>true</Visible>
           <CollisionType>Slope</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>
           <BounceVelocityY>0</BounceVelocityY>
+          <SlideBoost>0</SlideBoost>
+          <SlideDirection>0</SlideDirection>
         </Item>
         <Item Type="DataTypes.CollisionSurface">
           <Source>0 0 0 0</Source>
@@ -522,13 +540,15 @@
           <Rotation>0</Rotation>
           <AssetName>collision_slope</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>0</BottomSlopePoint>
+          <BottomSlopePoint>3220</BottomSlopePoint>
           <Width>90</Width>
           <Height>40</Height>
           <Visible>true</Visible>
           <CollisionType>Slope</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>
           <BounceVelocityY>0</BounceVelocityY>
+          <SlideBoost>0</SlideBoost>
+          <SlideDirection>0</SlideDirection>
         </Item>
         <Item Type="DataTypes.CollisionSurface">
           <Source>0 0 0 0</Source>
@@ -538,13 +558,15 @@
           <Rotation>0</Rotation>
           <AssetName>collision_slope</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>0</BottomSlopePoint>
+          <BottomSlopePoint>3310</BottomSlopePoint>
           <Width>340</Width>
           <Height>20</Height>
           <Visible>true</Visible>
           <CollisionType>Slope</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>
           <BounceVelocityY>0</BounceVelocityY>
+          <SlideBoost>0</SlideBoost>
+          <SlideDirection>0</SlideDirection>
         </Item>
         <Item Type="DataTypes.CollisionSurface">
           <Source>0 0 0 0</Source>
@@ -554,13 +576,15 @@
           <Rotation>0</Rotation>
           <AssetName>collision_slope</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>300</BottomSlopePoint>
+          <BottomSlopePoint>3950</BottomSlopePoint>
           <Width>300</Width>
           <Height>50</Height>
           <Visible>true</Visible>
           <CollisionType>Slope</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>
           <BounceVelocityY>0</BounceVelocityY>
+          <SlideBoost>0</SlideBoost>
+          <SlideDirection>0</SlideDirection>
         </Item>
         <Item Type="DataTypes.CollisionSurface">
           <Source>0 0 0 0</Source>
@@ -570,13 +594,15 @@
           <Rotation>0</Rotation>
           <AssetName>collision_slope</AssetName>
           <Size>0 0 0 0</Size>
-          <BottomSlopePoint>220</BottomSlopePoint>
+          <BottomSlopePoint>4950</BottomSlopePoint>
           <Width>220</Width>
           <Height>100</Height>
           <Visible>true</Visible>
           <CollisionType>Slope</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>
           <BounceVelocityY>0</BounceVelocityY>
+          <SlideBoost>0</SlideBoost>
+          <SlideDirection>0</SlideDirection>
         </Item>
         <Item Type="DataTypes.CollisionSurface">
           <Source>0 0 0 0</Source>
@@ -587,12 +613,14 @@
           <AssetName>collision_surface</AssetName>
           <Size>0 0 0 0</Size>
           <BottomSlopePoint>0</BottomSlopePoint>
-          <Width>150</Width>
-          <Height>1400</Height>
+          <Width>1400</Width>
+          <Height>150</Height>
           <Visible>true</Visible>
           <CollisionType>Impassable</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>
           <BounceVelocityY>0</BounceVelocityY>
+          <SlideBoost>0</SlideBoost>
+          <SlideDirection>0</SlideDirection>
         </Item>
         <Item Type="DataTypes.CollisionSurface">
           <Source>0 0 0 0</Source>
@@ -609,6 +637,8 @@
           <CollisionType>Impassable</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>
           <BounceVelocityY>0</BounceVelocityY>
+          <SlideBoost>0</SlideBoost>
+          <SlideDirection>0</SlideDirection>
         </Item>
         <Item Type="DataTypes.CollisionSurface">
           <Source>0 0 0 0</Source>
@@ -625,6 +655,8 @@
           <CollisionType>Impassable</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>
           <BounceVelocityY>0</BounceVelocityY>
+          <SlideBoost>0</SlideBoost>
+          <SlideDirection>0</SlideDirection>
         </Item>
         <Item Type="DataTypes.CollisionSurface">
           <Source>0 0 0 0</Source>
@@ -641,6 +673,8 @@
           <CollisionType>Impassable</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>
           <BounceVelocityY>0</BounceVelocityY>
+          <SlideBoost>0</SlideBoost>
+          <SlideDirection>0</SlideDirection>
         </Item>
         <Item Type="DataTypes.CollisionSurface">
           <Source>0 0 0 0</Source>
@@ -657,6 +691,8 @@
           <CollisionType>Impassable</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>
           <BounceVelocityY>0</BounceVelocityY>
+          <SlideBoost>0</SlideBoost>
+          <SlideDirection>0</SlideDirection>
         </Item>
         <Item Type="DataTypes.CollisionSurface">
           <Source>0 0 0 0</Source>
@@ -673,6 +709,8 @@
           <CollisionType>Impassable</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>
           <BounceVelocityY>0</BounceVelocityY>
+          <SlideBoost>0</SlideBoost>
+          <SlideDirection>0</SlideDirection>
         </Item>
         <Item Type="DataTypes.CollisionSurface">
           <Source>0 0 0 0</Source>
@@ -689,6 +727,8 @@
           <CollisionType>Impassable</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>
           <BounceVelocityY>0</BounceVelocityY>
+          <SlideBoost>0</SlideBoost>
+          <SlideDirection>0</SlideDirection>
         </Item>
         <Item Type="DataTypes.CollisionSurface">
           <Source>0 0 0 0</Source>
@@ -705,6 +745,8 @@
           <CollisionType>Impassable</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>
           <BounceVelocityY>0</BounceVelocityY>
+          <SlideBoost>0</SlideBoost>
+          <SlideDirection>0</SlideDirection>
         </Item>
         <Item Type="DataTypes.CollisionSurface">
           <Source>0 0 0 0</Source>
@@ -721,6 +763,8 @@
           <CollisionType>Impassable</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>
           <BounceVelocityY>0</BounceVelocityY>
+          <SlideBoost>0</SlideBoost>
+          <SlideDirection>0</SlideDirection>
         </Item>
         <Item Type="DataTypes.CollisionSurface">
           <Source>0 0 0 0</Source>
@@ -737,6 +781,8 @@
           <CollisionType>Impassable</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>
           <BounceVelocityY>0</BounceVelocityY>
+          <SlideBoost>0</SlideBoost>
+          <SlideDirection>0</SlideDirection>
         </Item>
         <Item Type="DataTypes.CollisionSurface">
           <Source>0 0 0 0</Source>
@@ -753,6 +799,8 @@
           <CollisionType>Impassable</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>
           <BounceVelocityY>0</BounceVelocityY>
+          <SlideBoost>0</SlideBoost>
+          <SlideDirection>0</SlideDirection>
         </Item>
         <Item Type="DataTypes.CollisionSurface">
           <Source>0 0 0 0</Source>
@@ -769,6 +817,8 @@
           <CollisionType>Impassable</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>
           <BounceVelocityY>0</BounceVelocityY>
+          <SlideBoost>0</SlideBoost>
+          <SlideDirection>0</SlideDirection>
         </Item>
         <Item Type="DataTypes.CollisionSurface">
           <Source>0 0 0 0</Source>
@@ -785,6 +835,8 @@
           <CollisionType>Impassable</CollisionType>
           <BounceVelocityX>0</BounceVelocityX>
           <BounceVelocityY>0</BounceVelocityY>
+          <SlideBoost>0</SlideBoost>
+          <SlideDirection>0</SlideDirection>
         </Item>
         <Item Type="DataTypes.CollisionSurface">
           <Source>0 0 0 0</Source>
@@ -801,6 +853,8 @@
           <CollisionType>Bounce</CollisionType>
           <BounceVelocityX>-500</BounceVelocityX>
           <BounceVelocityY>-8500</BounceVelocityY>
+          <SlideBoost>0</SlideBoost>
+          <SlideDirection>0</SlideDirection>
         </Item>
         <Item Type="DataTypes.CollisionSurface">
           <Source>0 0 0 0</Source>
@@ -817,6 +871,8 @@
           <CollisionType>Bounce</CollisionType>
           <BounceVelocityX>-900</BounceVelocityX>
           <BounceVelocityY>-4000</BounceVelocityY>
+          <SlideBoost>0</SlideBoost>
+          <SlideDirection>0</SlideDirection>
         </Item>
       </Collision>
     </Layers>

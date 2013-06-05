@@ -175,7 +175,8 @@ namespace Hotbox
                 };
                 
                 
-                LevelType level = content.Load<LevelType>("Levels/tutorial");
+                //LevelType level = content.Load<LevelType>("Levels/tutorial2");
+                LevelType level = new LevelType();
 
                 importLayers(level);
 

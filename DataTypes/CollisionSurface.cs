@@ -31,6 +31,12 @@ namespace DataTypes
         /// A bounce tile is one that give the player a jump boost when they land on top of it.
         /// </summary>
         Bounce = 3,
+
+        /// <summary>
+        /// A slide collision surface is one that causes the player to lose control over movement.
+        /// They can jump, but not run up the slide.
+        /// </summary>
+        Slide = 4,
     }
 
     public class CollisionSurface : Sprite
@@ -44,6 +50,9 @@ namespace DataTypes
 
         public float BounceVelocityX = 0.0f;
         public float BounceVelocityY = 0.0f;
+
+        public float SlideBoost = 0.0f;
+        public float SlideDirection = 0.0f;
 
         public CollisionSurface()
         {
