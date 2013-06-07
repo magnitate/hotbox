@@ -608,7 +608,7 @@ namespace Hotbox.GameObject
                     if( tile.Colour != Color.Transparent)
                         tile.Colour = Color.DarkBlue;
 
-                    if (tile.CollisionType == TileCollision.Impassable || tile.CollisionType == TileCollision.Platform)
+                    if (tile.CollisionType == TileCollision.Impassable || tile.CollisionType == TileCollision.Platform || tile.CollisionType == TileCollision.Conveyor)
                     {
                         // Determine collision depth (with direction) and magnitude.
                         Vector2 depth = RectangleExtensions.GetIntersectionDepth(bounds, tileBounds);
@@ -626,6 +626,14 @@ namespace Hotbox.GameObject
                                     isOnGround = true;
                                     isJumping = false;
                                     isGliding = false;
+
+                                    if (tile.CollisionType == TileCollision.Conveyor)
+                                    {
+                                        if (movement != 0)
+                                            SlideDirection = movement;
+
+                                        SlideMoveFactor = tile.SlideBoost;
+                                    }
                                 }
 
                                 //Ignore platforms, unless we are on the ground.
@@ -635,6 +643,9 @@ namespace Hotbox.GameObject
                                     Position = new Vector2(Position.X, Position.Y + depth.Y);
                                     
                                     Rotation = 0.0f;
+
+                                    if (tile.CollisionType == TileCollision.Conveyor)
+                                        isSliding = true;
 
                                     //Perform further collisions with the new bounds.
                                     bounds = BoundingBox();

@@ -95,7 +95,9 @@ namespace DataTypes
                 new Sprite { AssetName = "Tutorial/mid4", Position = new Vector2(14336, 1938) },
                 new Sprite { AssetName = "Tutorial/jumping_post1", Position = new Vector2(1350, 1820) },
                 new Sprite { AssetName = "Tutorial/jumping_post2", Position = new Vector2(2250, 1800) },
-                new Sprite { AssetName = "Tutorial/cart", Position = new Vector2(4670, 1950) }
+                new Sprite { AssetName = "Tutorial/cart", Position = new Vector2(4670, 1950) },
+
+                new Sprite { AssetName = "lifeblood", Position = new Vector2(50, 1800) }
             };
 
         public Sprite[] Collision = 
@@ -135,6 +137,8 @@ namespace DataTypes
                 new CollisionSurface(){ Position = new Vector2(50, 1900), Width = 1400, Height = 150, CollisionType = TileCollision.Impassable },
                 new CollisionSurface(){ Position = new Vector2(50, 900), Width = 150, Height = 1000, CollisionType = TileCollision.Impassable },
                 new CollisionSurface(){ Position = new Vector2(450, 1100), Width = 150, Height = 500, CollisionType = TileCollision.Impassable },
+
+                new CollisionSurface(){ Position = new Vector2(650, 1250), Width = 1000, Height = 150, SlideBoost = 0.5f, CollisionType = TileCollision.Conveyor },
 
                 new CollisionSurface(){ Position = new Vector2(1330, 1780), Width = 50, Height = 100, CollisionType = TileCollision.Impassable },
                 new CollisionSurface(){ Position = new Vector2(2230, 1740), Width = 50, Height = 100, CollisionType = TileCollision.Impassable },

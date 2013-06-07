@@ -33,10 +33,16 @@ namespace DataTypes
         Bounce = 3,
 
         /// <summary>
-        /// A slide collision surface is one that causes the player to lose control over movement.
+        /// A slide is a sloped collision surface that causes the player to lose control over movement.
         /// They can jump, but not run up the slide.
         /// </summary>
         Slide = 4,
+
+        /// <summary>
+        /// A conveyor is a flat collision surface that acts similarly to a slide, causing the player to
+        /// move in the given direction.
+        /// </summary>
+        Conveyor = 5,
     }
 
     public class CollisionSurface : Sprite

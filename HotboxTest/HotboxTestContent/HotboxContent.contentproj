@@ -380,7 +380,13 @@
       <Name>DataTypes</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="lifeblood.png">
+      <Name>lifeblood</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="Levels\tutorial2.xml">
       <Name>tutorial2</Name>
