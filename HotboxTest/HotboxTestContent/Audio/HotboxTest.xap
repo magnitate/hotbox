@@ -221,7 +221,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = 1::ea759a65-06c7-4f56-a09a-46d56af06ca7;
+            Name = 1::4012d570-d397-4048-8c69-1fefb5f6ebe2;
             Property = 0;
             Sound = 0;
             Line Color = 4278716040;
@@ -392,6 +392,12 @@ Wave Bank
     Windows Bank Path Edited = 0;
     Seek Tables = 1;
     Compression Preset Name = <none>;
+    Xbox Bank Last Modified Low = 0;
+    Xbox Bank Last Modified High = 0;
+    PC Bank Last Modified Low = 0;
+    PC Bank Last Modified High = 0;
+    Header Last Modified Low = 0;
+    Header Last Modified High = 0;
     Bank Last Revised Low = 3443182047;
     Bank Last Revised High = 30303228;
 
@@ -449,6 +455,8 @@ Sound Bank
     Windows File = Win\Sound Bank.xsb;
     Xbox Bank Path Edited = 0;
     Windows Bank Path Edited = 0;
+    Header Last Modified High = 0;
+    Header Last Modified Low = 0;
 
     Sound
     {
@@ -504,7 +512,7 @@ Sound Bank
             RPC Curve Entry
             {
                 RPC Name = Fadeout;
-                RPC Curve Name = 1::ea759a65-06c7-4f56-a09a-46d56af06ca7;
+                RPC Curve Name = 1::4012d570-d397-4048-8c69-1fefb5f6ebe2;
             }
         }
     }
@@ -670,7 +678,7 @@ Sound Bank
             Use Filter = 1;
             Filter Mode = 0;
             Filter Frequency = 1000.000000;
-            Filter Q Factor = 30.000000;
+            Filter Q Factor = 0.666700;
 
             Play Wave Event
             {
@@ -691,7 +699,7 @@ Sound Bank
 
                 Pitch Variation
                 {
-                    Min = 449;
+                    Min = 220;
                     Max = 678;
                     Operator = 0;
                     New Variation On Loop = 0;
@@ -699,16 +707,16 @@ Sound Bank
 
                 Frequency Variation
                 {
-                    Min = 208.000000;
-                    Max = 2384.000000;
+                    Min = 264.000000;
+                    Max = 1424.000000;
                     Operator = 0;
                     New Variation On Loop = 0;
                 }
 
                 Q Factor Variation
                 {
-                    Min = 11.810000;
-                    Max = 25.010000;
+                    Min = 15.480000;
+                    Max = 15.480000;
                     Operator = 0;
                     New Variation On Loop = 0;
                 }

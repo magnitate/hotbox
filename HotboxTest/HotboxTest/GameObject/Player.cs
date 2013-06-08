@@ -13,6 +13,7 @@ namespace Hotbox.GameObject
     public class Player : DataTypes.SpriteAnimation
     {
         PlayerIndex playerIndex;
+        Texture2D boundingTexture;
 
         public PlayerIndex GetPlayerIndex
         {
@@ -237,13 +238,13 @@ namespace Hotbox.GameObject
             IsReviving = true;
         }
 
-        public override Rectangle BoundingBox()
+        /*public override Rectangle BoundingBox()
         {
             //if( isCrouching)
             //    return new Rectangle((int)Position.X, (int)Position.Y + (height / 2), width, height / 2);
             //else
                 return new Rectangle((int)Position.X, (int)Position.Y, width, height);
-        }
+        }*/
 
 
         public Player(PlayerIndex thePlayerIndex, string theAssetName, int frames, int animations)
@@ -281,6 +282,8 @@ namespace Hotbox.GameObject
         public override void LoadContent(Microsoft.Xna.Framework.Content.ContentManager theContentManager, string theAssetName)
         {
             base.LoadContent(theContentManager, theAssetName);
+
+            boundingTexture = theContentManager.Load<Texture2D>("bounding_texture");
 
             AnimationClass anim = new AnimationClass();
             anim.Colour = Colour;
@@ -717,7 +720,7 @@ namespace Hotbox.GameObject
                         float displacement = RectangleExtensions.GetSlopePosition(bounds, tileBounds, tile.BottomSlopePoint);
 
                         //If we crossed the top of a tile, we are on the ground.
-                        if (previousBottom >= displacement - (this.BoundingBox().Height / 2))
+                        if (previousBottom > displacement - this.BoundingBox().Height / 2)
                         {
                             isOnGround = true;
                             isJumping = false;
@@ -728,7 +731,7 @@ namespace Hotbox.GameObject
                         if ((IsOnGround & !wantsToJump) | (IsOnGround & isJumping) | (IsOnGround & isGliding))
                         {
                             // Resolve the collision along the Y axis.
-                            Position = new Vector2(Position.X, displacement - this.BoundingBox().Height + 1);
+                                Position = new Vector2(Position.X, displacement - this.BoundingBox().Height / 2);
 
                             Rotation = RectangleExtensions.GetSlopeAngle(tileBounds, tile.BottomSlopePoint) / 2;
 
@@ -798,7 +801,7 @@ namespace Hotbox.GameObject
                         if ((IsOnGround & !wantsToJump) | (IsOnGround & isJumping) | (IsOnGround & isGliding))
                         {
                             // Resolve the collision along the Y axis.
-                            Position = new Vector2(Position.X, displacement - this.BoundingBox().Height + 1);
+                            Position = new Vector2(Position.X, displacement - (this.BoundingBox().Height / 2) + 1);
 
                             isSliding = true;
 
@@ -839,9 +842,12 @@ namespace Hotbox.GameObject
         }
 
         public override void Draw(SpriteBatch theSpriteBatch)
-        {   
-            if( IsAlive)
+        {
+            if (IsAlive)
+            {
                 theSpriteBatch.Draw(mSpriteTexture, Position, Animations[Animation].Rectangles[FrameIndex], Animations[Animation].Colour, Rotation, Origin, Scale, Animations[Animation].SpriteEffect, 0f);
+                //theSpriteBatch.Draw(boundingTexture, BoundingBox(), Color.Yellow);
+            }
         }
     }
 }

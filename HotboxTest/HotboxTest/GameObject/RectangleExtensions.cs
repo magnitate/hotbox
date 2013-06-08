@@ -58,14 +58,14 @@ namespace Hotbox.GameObject
             if (bottomPoint == rectB.X)
             {
                 x = rectB.X;
-                x1 = rectA.X + (rectA.Width / 2);
+                x1 = rectA.X;
                 v = rectB.Height;
                 u = rectB.Width;
             }
             else
             {
                 x1 = rectB.X + rectB.Width;
-                x = rectA.X + (rectA.Width / 2);
+                x = rectA.X;
                 v = rectB.Height;
                 u = rectB.Width;
             }

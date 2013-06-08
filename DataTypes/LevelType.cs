@@ -101,7 +101,7 @@ namespace DataTypes
         public Sprite[] Collision = 
         {   
                 //bush slope
-                //new CollisionSurface(){ Position = new Vector2(900, 1860), Width = 500, Height = 40, BottomSlopePoint = 900, CollisionType = TileCollision.Slope, AssetName = "collision_slope" },
+                new CollisionSurface(){ Position = new Vector2(900, 1860), Width = 500, Height = 40, BottomSlopePoint = 900, CollisionType = TileCollision.Slope, AssetName = "collision_slope" },
 
                 new CollisionSurface(){ Position = new Vector2(600, 1660), Width = 500, Height = 240, BottomSlopePoint = 1100, SlideDirection = 1, SlideBoost = 1.25f, CollisionType = TileCollision.Slide, AssetName = "collision_slope" },
                 
@@ -136,13 +136,13 @@ namespace DataTypes
                 new CollisionSurface(){ Position = new Vector2(50, 900), Width = 150, Height = 1000, CollisionType = TileCollision.Impassable },
                 new CollisionSurface(){ Position = new Vector2(450, 1100), Width = 150, Height = 500, CollisionType = TileCollision.Impassable },
 
-                new CollisionSurface(){ Position = new Vector2(650, 1250), Width = 1000, Height = 150, SlideBoost = 0.5f, CollisionType = TileCollision.Conveyor },
+                new CollisionSurface(){ Position = new Vector2(750, 1250), Width = 1000, Height = 150, SlideBoost = 0.5f, CollisionType = TileCollision.Conveyor },
 
                 new CollisionSurface(){ Position = new Vector2(1330, 1780), Width = 50, Height = 100, CollisionType = TileCollision.Impassable },
                 new CollisionSurface(){ Position = new Vector2(2230, 1740), Width = 50, Height = 100, CollisionType = TileCollision.Impassable },
-                new CollisionSurface(){ Position = new Vector2(2400, 1840), Width = 920, Height = 150, CollisionType = TileCollision.Impassable },
+                new CollisionSurface(){ Position = new Vector2(2400, 1860), Width = 920, Height = 150, CollisionType = TileCollision.Impassable },
                 
-                new CollisionSurface(){ Position = new Vector2(3310, 1400), Width = 340, Height = 150, CollisionType = TileCollision.Impassable },
+                new CollisionSurface(){ Position = new Vector2(3310, 1450), Width = 340, Height = 150, CollisionType = TileCollision.Impassable },
                 new CollisionSurface(){ Position = new Vector2(3650, 1430), Width = 300, Height = 150, CollisionType = TileCollision.Impassable },
                 new CollisionSurface(){ Position = new Vector2(1400, 1860), Width = 1000, Height = 150, CollisionType = TileCollision.Impassable },
                 new CollisionSurface(){ Position = new Vector2(3900, 1430), Width = 600, Height = 150, CollisionType = TileCollision.Impassable },
@@ -158,10 +158,10 @@ namespace DataTypes
 
         public Sprite[] Interactive =
         {
-            new Pickup { AssetName = "lifeblood", Position = new Vector2(1000, 1800), Value = 1, PickupType = PickupVersion.Lifeblood },
-            new Pickup { AssetName = "lifeblood", Position = new Vector2(1500, 1700), Value = 1, PickupType = PickupVersion.Lifeblood },
-            new Pickup { AssetName = "lifeblood", Position = new Vector2(3300, 1300), Value = 1, PickupType = PickupVersion.Lifeblood },
-            new Pickup { AssetName = "lifeblood", Position = new Vector2(4000, 1200), Value = 5, PickupType = PickupVersion.Lifeblood },
+            new Pickup { AssetName = "lifeblood", Position = new Vector2(1000, 1800), Value = 1, PickupType = PickupItem.Lifeblood },
+            new Pickup { AssetName = "lifeblood", Position = new Vector2(1500, 1700), Value = 1, PickupType = PickupItem.Lifeblood },
+            new Pickup { AssetName = "lifeblood", Position = new Vector2(3300, 1300), Value = 1, PickupType = PickupItem.Lifeblood },
+            new Pickup { AssetName = "lifeblood", Position = new Vector2(4000, 1200), Value = 5, PickupType = PickupItem.Lifeblood },
         };
     }
 }

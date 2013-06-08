@@ -41,7 +41,7 @@ namespace Hotbox
             audioManager.SetBgmVolume((volume / 100));
         }
 
-        private float sfxVolume = 1.0f;
+        private float sfxVolume = 0.35f;
         /// <summary>
         /// Sets the volume between 0 and 100.
         /// </summary>

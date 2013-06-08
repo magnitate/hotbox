@@ -113,7 +113,6 @@
     <Compile Include="GameObject\Layer.cs" />
     <Compile Include="GameObject\Player.cs" />
     <Compile Include="GameObject\RectangleExtensions.cs" />
-    <Compile Include="GameObject\SlopeExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />

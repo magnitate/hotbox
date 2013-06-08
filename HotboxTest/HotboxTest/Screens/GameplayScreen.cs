@@ -132,7 +132,7 @@ namespace Hotbox
 
                 playerList = new List<GameObject.Player>();
                 playerList.Add(playerOne);
-                playerList.Add(playerTwo);
+                //playerList.Add(playerTwo);
                 //playerList.Add(playerThree);
                 //playerList.Add(playerFour);
 

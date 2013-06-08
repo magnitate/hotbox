@@ -43,6 +43,12 @@ namespace DataTypes
         /// move in the given direction.
         /// </summary>
         Conveyor = 5,
+
+        /// <summary>
+        /// A Walljump collision surface allows the player to walljump
+        /// </summary>
+        Walljump = 6,
+
     }
 
     public class CollisionSurface : Sprite
