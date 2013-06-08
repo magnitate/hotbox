@@ -151,11 +151,12 @@ namespace Hotbox
                 _layerDictionary.Add("mid", 8);
                 _layerDictionary.Add("c", 9);
                 _layerDictionary.Add("interactive", 10);
-                _layerDictionary.Add("front", 11);
-                _layerDictionary.Add("near", 12);
-                _layerDictionary.Add("fore", 13);
+                _layerDictionary.Add("player", 11);
+                _layerDictionary.Add("front", 12);
+                _layerDictionary.Add("near", 13);
+                _layerDictionary.Add("fore", 14);
                 
-                // Create 13 layers with parallax ranging from 0% to 100% (only horizontal)
+                // Create 15 layers with parallax ranging from 0% to 100% (only horizontal)
                 _layers = new List<GameObject.Layer>
                 {
                     new GameObject.Layer(_camera) { Parallax = new Vector2(0.0f, 1.0f) },
@@ -165,6 +166,7 @@ namespace Hotbox
                     new GameObject.Layer(_camera) { Parallax = new Vector2(0.6f, 1.0f) },
                     new GameObject.Layer(_camera) { Parallax = new Vector2(0.7f, 1.0f) },
                     new GameObject.Layer(_camera) { Parallax = new Vector2(0.8f, 1.0f) },
+                    new GameObject.Layer(_camera) { Parallax = new Vector2(1.0f, 1.0f) },
                     new GameObject.Layer(_camera) { Parallax = new Vector2(1.0f, 1.0f) },
                     new GameObject.Layer(_camera) { Parallax = new Vector2(1.0f, 1.0f) },
                     new GameObject.Layer(_camera) { Parallax = new Vector2(1.0f, 1.0f) },
@@ -182,7 +184,7 @@ namespace Hotbox
 
                 //ADD THE PLAYERS TO THE LAYER LIST
                 foreach (GameObject.Player player in playerList)
-                    _layers[_layerDictionary["interactive"]].Sprites.Add(player);
+                    _layers[_layerDictionary["player"]].Sprites.Add(player);
 
                 //load content for every sprite in the layers
                 foreach (GameObject.Layer layer in _layers)
@@ -288,6 +290,14 @@ namespace Hotbox
             {
                 _layers[9].Sprites.Add(s);
             }
+
+            if (level.Layers.Interactive != null)
+            {
+                foreach (Sprite s in level.Layers.Interactive)
+                {
+                    _layers[10].Sprites.Add(s);
+                }
+            }
         }
 
         /// <summary>
@@ -299,8 +309,12 @@ namespace Hotbox
 
             foreach (GameObject.Player p in playerList)
             {
-                p.Position = new Vector2(500, 1750);
-                p.IsAlive = true;
+                p.Reset();
+            }
+
+            foreach (Pickup p in _layers[_layerDictionary["interactive"]].Sprites)
+            {
+                p.Active = true;
             }
 
             _camera.Reset(playerList[0].Position, BaseScreenSize);
@@ -392,6 +406,10 @@ namespace Hotbox
                 foreach (CollisionSurface c in _layers[_layerDictionary["c"]].Sprites)
                     if(c.Colour != Color.Transparent)
                         c.Update(gameTime);
+
+                foreach (Pickup p in _layers[_layerDictionary["interactive"]].Sprites)
+                    if (p.Active)
+                        p.Update(gameTime);
             }
         }
 
@@ -480,7 +498,7 @@ namespace Hotbox
                     }
                     
                     // Otherwise update the player position.
-                    playerList[playerIndex].Update(gameTime, input, _layers[_layerDictionary["c"]].Sprites);
+                    playerList[playerIndex].Update(gameTime, input, _layers[_layerDictionary["c"]].Sprites, _layers[_layerDictionary["interactive"]].Sprites);
                   
                 }
 
@@ -535,7 +553,7 @@ namespace Hotbox
             //Draws info about each player
             for (int i = 0; i < playerList.Count; i++)
             {
-                spriteBatch.DrawString(gameFont, "Player" + playerList[i].GetPlayerIndex + " Position:" + playerList[i].Position.ToString() + ", Ground: " + playerList[i].IsOnGround.ToString() + ", Falling: " + playerList[i].IsFalling + ", Jumping: " + playerList[i].isJumping + ", Gliding: " + playerList[i].isGliding + ", isCrouching: " + playerList[i].IsCrouching + ", IsAlive: " + playerList[i].IsAlive, new Vector2(10, (10 + stringHeight + (stringHeight * i))), Color.DarkRed);
+                spriteBatch.DrawString(gameFont, "Player" + playerList[i].GetPlayerIndex + " Position:" + playerList[i].Position.ToString() + ", Ground: " + playerList[i].IsOnGround.ToString() + ", Falling: " + playerList[i].IsFalling + ", Jumping: " + playerList[i].isJumping + ", Gliding: " + playerList[i].isGliding + ", isCrouching: " + playerList[i].IsCrouching + ", IsAlive: " + playerList[i].IsAlive + ", Lifeblood: " + playerList[i].LifeBloodCount, new Vector2(10, (10 + stringHeight + (stringHeight * i))), Color.DarkRed);
             }
         }
 

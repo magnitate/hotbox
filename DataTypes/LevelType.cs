@@ -96,8 +96,6 @@ namespace DataTypes
                 new Sprite { AssetName = "Tutorial/jumping_post1", Position = new Vector2(1350, 1820) },
                 new Sprite { AssetName = "Tutorial/jumping_post2", Position = new Vector2(2250, 1800) },
                 new Sprite { AssetName = "Tutorial/cart", Position = new Vector2(4670, 1950) },
-
-                new Sprite { AssetName = "lifeblood", Position = new Vector2(50, 1800) }
             };
 
         public Sprite[] Collision = 
@@ -156,6 +154,14 @@ namespace DataTypes
                 new CollisionSurface(){ Position = new Vector2(4470, 1870), Width = 280, Height = 230, BounceVelocityX = -500.0f, BounceVelocityY = -8500.0f, CollisionType = TileCollision.Bounce },
                 new CollisionSurface(){ Position = new Vector2(4970, 2000), Width = 280, Height = 230, BounceVelocityX = -900.0f, BounceVelocityY = -4000.0f, CollisionType = TileCollision.Bounce },
 
+        };
+
+        public Sprite[] Interactive =
+        {
+            new Pickup { AssetName = "lifeblood", Position = new Vector2(1000, 1800), Value = 1, PickupType = PickupVersion.Lifeblood },
+            new Pickup { AssetName = "lifeblood", Position = new Vector2(1500, 1700), Value = 1, PickupType = PickupVersion.Lifeblood },
+            new Pickup { AssetName = "lifeblood", Position = new Vector2(3300, 1300), Value = 1, PickupType = PickupVersion.Lifeblood },
+            new Pickup { AssetName = "lifeblood", Position = new Vector2(4000, 1200), Value = 5, PickupType = PickupVersion.Lifeblood },
         };
     }
 }

@@ -184,6 +184,13 @@ namespace Hotbox.GameObject
             }
         }
 
+        private int lifebloodCount = 0;
+
+        public int LifeBloodCount
+        {
+            get { return lifebloodCount; }
+        }
+
         public void Revive(GameObject.Player medic)
         {
             theMedic = medic;
@@ -252,7 +259,7 @@ namespace Hotbox.GameObject
             Animation = "RightIdle";
         }
 
-        public void Update(GameTime gameTime, InputState input, List<Sprite> level)
+        public void Update(GameTime gameTime, InputState input, List<Sprite> level, List<Sprite> pickups)
         {
             if (IsAlive)
             {
@@ -261,6 +268,8 @@ namespace Hotbox.GameObject
                 GetInput(gameTime, input);
 
                 ApplyPhysics(gameTime, level);
+
+                GetPickups(pickups);
 
                 //clear input
                 movement = 0.0f;
@@ -765,6 +774,28 @@ namespace Hotbox.GameObject
 
             //Save the new bounds bottom.
             previousBottom = bounds.Bottom;
+        }
+
+        public void GetPickups(List<Sprite> pickups)
+        {
+            foreach (Pickup p in pickups)
+            {
+                if(this.BoundingBox().Intersects(p.BoundingBox()))
+                {
+                    if (p.Active)
+                    {
+                        p.Active = false;
+                        lifebloodCount += p.Value;
+                    }
+                }
+            }
+        }
+
+        public void Reset()
+        {
+            Position = new Vector2(500, 1750);
+            IsAlive = true;
+            lifebloodCount = 0;
         }
 
         public override void Draw(SpriteBatch theSpriteBatch)
