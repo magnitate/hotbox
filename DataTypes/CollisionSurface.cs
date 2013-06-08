@@ -10,15 +10,15 @@ namespace DataTypes
     public enum TileCollision
     {
         /// <summary>
-        /// A slope tile is one which moves the player up/down a gradient.
-        /// </summary>
-        Slope = 0,
-
-        /// <summary>
         /// An impassable tile is one which does not allow the player to move through
         /// it at all. It is completely solid.
         /// </summary>
-        Impassable = 1,
+        Impassable = 0,
+
+        /// <summary>
+        /// A slope tile is one which moves the player up/down a gradient.
+        /// </summary>
+        Slope = 1,
 
         /// <summary>
         /// A platform tile is one which behaves like a passable tile except when the
@@ -57,27 +57,25 @@ namespace DataTypes
         public int Height;
         public bool Visible;
 
-        private float bottomSlopePoint = 0;
+        //private float bottomSlopePoint = 0;
         public TileCollision CollisionType;
 
-        public float BounceVelocityX = 0.0f;
-        public float BounceVelocityY = 0.0f;
-
-        public float SlideBoost = 0.0f;
-        public float SlideDirection = 0.0f;
+        //public float SlideBoost = 0.0f;
+        //public float SlideDirection = 0.0f;
 
         public CollisionSurface()
         {
             AssetName = "collision_surface";
+            CollisionType = TileCollision.Impassable;
             Colour = Color.White;
             Visible = true;
         }
 
-        public float BottomSlopePoint
+        /*public float BottomSlopePoint
         {
             get { return bottomSlopePoint; }
             set { bottomSlopePoint = value; }
-        }
+        }*/
 
         public override Rectangle BoundingBox()
         {
@@ -93,12 +91,7 @@ namespace DataTypes
         public override void Draw(SpriteBatch theSpritebatch)
         {
             if (Visible)
-            {
-                if (bottomSlopePoint == Position.X + Width)
-                    theSpritebatch.Draw(mSpriteTexture, BoundingBox(), null, Colour, 0.0f, Vector2.Zero, SpriteEffects.FlipHorizontally, 0);
-                else
-                    theSpritebatch.Draw(mSpriteTexture, BoundingBox(), Colour);
-            }
+                theSpritebatch.Draw(mSpriteTexture, BoundingBox(), Colour);
         }
     }
 }

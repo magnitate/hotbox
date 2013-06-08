@@ -659,7 +659,7 @@ namespace Hotbox.GameObject
                     if( tile.Colour != Color.Transparent)
                         tile.Colour = Color.DarkBlue;
 
-                    if (tile.CollisionType == TileCollision.Impassable || tile.CollisionType == TileCollision.Platform || tile.CollisionType == TileCollision.Conveyor)
+                    if (tile.CollisionType != TileCollision.Slope && tile.CollisionType != TileCollision.Slide)
                     {
                         // Determine collision depth (with direction) and magnitude.
                         Vector2 depth = RectangleExtensions.GetIntersectionDepth(bounds, tileBounds);
@@ -678,12 +678,22 @@ namespace Hotbox.GameObject
                                     isJumping = false;
                                     isGliding = false;
 
+                                    //BEGIN BOUNCE
+                                    if (tile.CollisionType == TileCollision.Bounce)
+                                    {
+                                        CollisionBounce bounceTile = (CollisionBounce)tile;
+                                        isBouncing = true;
+                                        BounceLaunchVelocityX = bounceTile.BounceVelocityX;
+                                        BounceLaunchVelocityY = bounceTile.BounceVelocityY;
+                                    }
+
                                     if (tile.CollisionType == TileCollision.Conveyor)
                                     {
                                         if (movement != 0)
                                             SlideDirection = movement;
 
-                                        SlideMoveFactor = tile.SlideBoost;
+                                        CollisionConveyor conveyorTile = (CollisionConveyor)tile;
+                                        SlideMoveFactor = conveyorTile.SlideBoost;
                                     }
                                 }
 
@@ -702,22 +712,23 @@ namespace Hotbox.GameObject
                                     bounds = BoundingBox();
                                 }
                             }
-                            else if (tile.CollisionType == TileCollision.Impassable)
+                            else if (tile.CollisionType == TileCollision.Impassable || tile.CollisionType == TileCollision.Walljump)
                             {
                                 // Resolve the collision along the X axis
                                 Position = new Vector2(Position.X + (depth.X - 5), Position.Y);
 
-                                IsOnWall = true;
+                                if( tile.CollisionType == TileCollision.Walljump)
+                                    IsOnWall = true;
 
                                 //Perform further collisions with the new bounds.
                                 bounds = BoundingBox();
                             }
                         }
                     }
-                    else if (tile.CollisionType == TileCollision.Slope)
+                    else if (tile.CollisionType == TileCollision.Slope || tile.CollisionType == TileCollision.Slide)
                     {
-                        // Determine collision depth (with direction) and magnitude.
-                        float displacement = RectangleExtensions.GetSlopePosition(bounds, tileBounds, tile.BottomSlopePoint);
+                        CollisionSlope slopeTile = (CollisionSlope)tile;
+                        float displacement = RectangleExtensions.GetSlopePosition(bounds, tileBounds, slopeTile.BottomSlopePoint);
 
                         //If we crossed the top of a tile, we are on the ground.
                         if (previousBottom > displacement - this.BoundingBox().Height / 2)
@@ -725,6 +736,13 @@ namespace Hotbox.GameObject
                             isOnGround = true;
                             isJumping = false;
                             isGliding = false;
+
+                            if (tile.CollisionType == TileCollision.Slide)
+                            {
+                                CollisionSlide slideTile = (CollisionSlide)tile;
+                                SlideDirection = slideTile.SlideDirection;
+                                SlideMoveFactor = slideTile.SlideBoost;
+                            }
                         }
 
                         //Ignore platforms, unless we are on the ground.
@@ -733,79 +751,10 @@ namespace Hotbox.GameObject
                             // Resolve the collision along the Y axis.
                                 Position = new Vector2(Position.X, displacement - this.BoundingBox().Height / 2);
 
-                            Rotation = RectangleExtensions.GetSlopeAngle(tileBounds, tile.BottomSlopePoint) / 2;
+                                Rotation = RectangleExtensions.GetSlopeAngle(tileBounds, slopeTile.BottomSlopePoint) / 2;
 
-                            //Perform further collisions with the new bounds.
-                            bounds = BoundingBox();
-                        }
-                    }
-                    else if (tile.CollisionType == TileCollision.Bounce)
-                    {
-                        // Determine collision depth (with direction) and magnitude.
-                        Vector2 depth = RectangleExtensions.GetIntersectionDepth(bounds, tileBounds);
-                        if (depth != Vector2.Zero)
-                        {
-                            float absDepthX = Math.Abs(depth.X);
-                            float absDepthY = Math.Abs(depth.Y);
-
-                            //Resolve the collision along the shallow axis.
-                            if (absDepthY < absDepthX || tile.CollisionType == TileCollision.Platform)
-                            {
-                                //If we crossed the top of a tile, we are now bouncing.
-                                if (previousBottom <= tileBounds.Top)
-                                {
-                                    isBouncing = true;
-                                    BounceLaunchVelocityX = tile.BounceVelocityX;
-                                    BounceLaunchVelocityY = tile.BounceVelocityY;
-                                }
-
-                                //Ignore platforms, unless we are bouncing
-                                if (IsBouncing)
-                                {
-                                    // Resolve the collision along the Y axis.
-                                    Position = new Vector2(Position.X, Position.Y + depth.Y);
-
-                                    Rotation = 0.0f;
-
-                                    //Perform further collisions with the new bounds.
-                                    bounds = BoundingBox();
-                                }
-                            }
-                            else
-                            {
-                                // Resolve the collision along the X axis
-                                Position = new Vector2(Position.X + depth.X, Position.Y);
-
-                                //Perform further collisions with the new bounds.
-                                bounds = BoundingBox();
-                            }
-                        }
-                    }
-                    else if (tile.CollisionType == TileCollision.Slide)
-                    {
-                        // Determine collision depth (with direction) and magnitude.
-                        float displacement = RectangleExtensions.GetSlopePosition(bounds, tileBounds, tile.BottomSlopePoint);
-
-                        //If we crossed the top of a tile, we are on the ground.
-                        if (previousBottom >= displacement - (this.BoundingBox().Height / 2))
-                        {
-                            isOnGround = true;
-                            isJumping = false;
-                            isGliding = false;
-                            
-                            SlideDirection = tile.SlideDirection;
-                            SlideMoveFactor = tile.SlideBoost;
-                        }
-
-                        //Ignore platforms, unless we are on the ground.
-                        if ((IsOnGround & !wantsToJump) | (IsOnGround & isJumping) | (IsOnGround & isGliding))
-                        {
-                            // Resolve the collision along the Y axis.
-                            Position = new Vector2(Position.X, displacement - (this.BoundingBox().Height / 2) + 1);
-
-                            isSliding = true;
-
-                            Rotation = RectangleExtensions.GetSlopeAngle(tileBounds, tile.BottomSlopePoint) / 2;
+                                if (tile.CollisionType == TileCollision.Slide)
+                                    isSliding = true;
 
                             //Perform further collisions with the new bounds.
                             bounds = BoundingBox();
@@ -820,7 +769,7 @@ namespace Hotbox.GameObject
 
         private void GetPickups(List<Sprite> pickups)
         {
-            foreach (Pickup p in pickups)
+            foreach (PickupLifeblood p in pickups)
             {
                 if(this.BoundingBox().Intersects(p.BoundingBox()))
                 {
@@ -834,6 +783,9 @@ namespace Hotbox.GameObject
             }
         }
 
+        /// <summary>
+        /// Resets the player back to the beginning of the level
+        /// </summary>
         public void Reset()
         {
             Position = new Vector2(500, 1750);
@@ -846,6 +798,8 @@ namespace Hotbox.GameObject
             if (IsAlive)
             {
                 theSpriteBatch.Draw(mSpriteTexture, Position, Animations[Animation].Rectangles[FrameIndex], Animations[Animation].Colour, Rotation, Origin, Scale, Animations[Animation].SpriteEffect, 0f);
+                
+                //DRAWS THE PLAYERS BOUNDING BOX
                 //theSpriteBatch.Draw(boundingTexture, BoundingBox(), Color.Yellow);
             }
         }

@@ -101,67 +101,67 @@ namespace DataTypes
         public Sprite[] Collision = 
         {   
                 //bush slope
-                new CollisionSurface(){ Position = new Vector2(900, 1860), Width = 500, Height = 40, BottomSlopePoint = 900, CollisionType = TileCollision.Slope, AssetName = "collision_slope" },
+                new CollisionSlope(){ Position = new Vector2(900, 1860), Width = 500, Height = 40, BottomSlopePoint = 900 },
 
-                new CollisionSurface(){ Position = new Vector2(600, 1660), Width = 500, Height = 240, BottomSlopePoint = 1100, SlideDirection = 1, SlideBoost = 1.25f, CollisionType = TileCollision.Slide, AssetName = "collision_slope" },
+                new CollisionSlide(){ Position = new Vector2(600, 1660), Width = 500, Height = 240, BottomSlopePoint = 1100, SlideDirection = 1, SlideBoost = 1.25f },
                 
                 //house slope
-                new CollisionSurface(){ Position = new Vector2(2100, 1840), Width = 300, Height = 20, BottomSlopePoint = 2100, CollisionType = TileCollision.Slope, AssetName = "collision_slope" },
+                new CollisionSlope(){ Position = new Vector2(2100, 1840), Width = 300, Height = 20, BottomSlopePoint = 2100 },
 
                 //windmill hill
 
                     //second row small
-                new CollisionSurface(){ Position = new Vector2(2460, 1780), Width = 200, Height = 50, BottomSlopePoint = 2460, CollisionType = TileCollision.Slope, AssetName = "collision_slope" },
+                new CollisionSlope(){ Position = new Vector2(2460, 1780), Width = 200, Height = 50, BottomSlopePoint = 2460 },
 
                     //massive one
-                new CollisionSurface(){ Position = new Vector2(2600, 1400), Width = 720, Height = 440, BottomSlopePoint = 2600, CollisionType = TileCollision.Slope, AssetName = "collision_slope" },//this is big
+                new CollisionSlope(){ Position = new Vector2(2600, 1400), Width = 720, Height = 440, BottomSlopePoint = 2600 },//this is big
 
                     //original row merged into bigger
-                new CollisionSurface(){ Position = new Vector2(2400, 1790), Width = 200, Height = 50, BottomSlopePoint = 2400, CollisionType = TileCollision.Slope, AssetName = "collision_slope" },
-                new CollisionSurface(){ Position = new Vector2(2600, 1640), Width = 300, Height = 150, BottomSlopePoint = 2600, CollisionType = TileCollision.Slope, AssetName = "collision_slope" },
-                new CollisionSurface(){ Position = new Vector2(2900, 1590), Width = 80, Height = 50, BottomSlopePoint = 2900, CollisionType = TileCollision.Slope, AssetName = "collision_slope" },
-                new CollisionSurface(){ Position = new Vector2(2980, 1490), Width = 140, Height = 100, BottomSlopePoint = 2980, CollisionType = TileCollision.Slope, AssetName = "collision_slope" },
-                new CollisionSurface(){ Position = new Vector2(3120, 1440), Width = 100, Height = 50, BottomSlopePoint = 3120, CollisionType = TileCollision.Slope, AssetName = "collision_slope" },
-                new CollisionSurface(){ Position = new Vector2(3220, 1400), Width = 90, Height = 40, BottomSlopePoint = 3220, CollisionType = TileCollision.Slope, AssetName = "collision_slope" },
-                new CollisionSurface(){ Position = new Vector2(3310, 1380), Width = 340, Height = 20, BottomSlopePoint = 3310, CollisionType = TileCollision.Slope, AssetName = "collision_slope" },
-                new CollisionSurface(){ Position = new Vector2(3650, 1380), Width = 300, Height = 50, BottomSlopePoint = 3950, CollisionType = TileCollision.Slope, AssetName = "collision_slope" },
+                new CollisionSlope(){ Position = new Vector2(2400, 1790), Width = 200, Height = 50, BottomSlopePoint = 2400 },
+                new CollisionSlope(){ Position = new Vector2(2600, 1640), Width = 300, Height = 150, BottomSlopePoint = 2600 },
+                new CollisionSlope(){ Position = new Vector2(2900, 1590), Width = 80, Height = 50, BottomSlopePoint = 2900 },
+                new CollisionSlope(){ Position = new Vector2(2980, 1490), Width = 140, Height = 100, BottomSlopePoint = 2980 },
+                new CollisionSlope(){ Position = new Vector2(3120, 1440), Width = 100, Height = 50, BottomSlopePoint = 3120 },
+                new CollisionSlope(){ Position = new Vector2(3220, 1400), Width = 90, Height = 40, BottomSlopePoint = 3220 },
+                new CollisionSlope(){ Position = new Vector2(3310, 1380), Width = 340, Height = 20, BottomSlopePoint = 3310 },
+                new CollisionSlope(){ Position = new Vector2(3650, 1380), Width = 300, Height = 50, BottomSlopePoint = 3950 },
 
                 //cart collision
-                new CollisionSurface(){ Position = new Vector2(4730, 1980), Width = 220, Height = 100, BottomSlopePoint = 4950, CollisionType = TileCollision.Slope, AssetName = "collision_slope" },
+                new CollisionSlope(){ Position = new Vector2(4730, 1980), Width = 220, Height = 100, BottomSlopePoint = 4950 },
                               
 
 
                 //FLAT COLLISION
-                new CollisionSurface(){ Position = new Vector2(50, 1900), Width = 1400, Height = 150, CollisionType = TileCollision.Impassable },
-                new CollisionSurface(){ Position = new Vector2(50, 900), Width = 150, Height = 1000, CollisionType = TileCollision.Impassable },
-                new CollisionSurface(){ Position = new Vector2(450, 1100), Width = 150, Height = 500, CollisionType = TileCollision.Impassable },
+                new CollisionSurface(){ Position = new Vector2(50, 1900), Width = 1400, Height = 150 },
+                new CollisionSurface(){ Position = new Vector2(50, 900), Width = 150, Height = 1000 },
+                new CollisionSurface(){ Position = new Vector2(450, 1100), Width = 150, Height = 500, CollisionType = TileCollision.Walljump },
 
-                new CollisionSurface(){ Position = new Vector2(750, 1250), Width = 1000, Height = 150, SlideBoost = 0.5f, CollisionType = TileCollision.Conveyor },
+                new CollisionConveyor(){ Position = new Vector2(750, 1250), Width = 1000, Height = 150, SlideBoost = 0.5f },
 
-                new CollisionSurface(){ Position = new Vector2(1330, 1780), Width = 50, Height = 100, CollisionType = TileCollision.Impassable },
-                new CollisionSurface(){ Position = new Vector2(2230, 1740), Width = 50, Height = 100, CollisionType = TileCollision.Impassable },
-                new CollisionSurface(){ Position = new Vector2(2400, 1860), Width = 920, Height = 150, CollisionType = TileCollision.Impassable },
+                new CollisionSurface(){ Position = new Vector2(1330, 1780), Width = 50, Height = 100 },
+                new CollisionSurface(){ Position = new Vector2(2230, 1740), Width = 50, Height = 100 },
+                new CollisionSurface(){ Position = new Vector2(2400, 1860), Width = 920, Height = 150 },
                 
-                new CollisionSurface(){ Position = new Vector2(3310, 1450), Width = 340, Height = 150, CollisionType = TileCollision.Impassable },
-                new CollisionSurface(){ Position = new Vector2(3650, 1430), Width = 300, Height = 150, CollisionType = TileCollision.Impassable },
-                new CollisionSurface(){ Position = new Vector2(1400, 1860), Width = 1000, Height = 150, CollisionType = TileCollision.Impassable },
-                new CollisionSurface(){ Position = new Vector2(3900, 1430), Width = 600, Height = 150, CollisionType = TileCollision.Impassable },
-                new CollisionSurface(){ Position = new Vector2(4400, 1550), Width = 100, Height = 600, CollisionType = TileCollision.Impassable },
-                new CollisionSurface(){ Position = new Vector2(4500, 2070), Width = 800, Height = 150, CollisionType = TileCollision.Impassable },
-                new CollisionSurface(){ Position = new Vector2(5300, 2070), Width = 15000, Height = 150, CollisionType = TileCollision.Impassable },
+                new CollisionSurface(){ Position = new Vector2(3310, 1450), Width = 340, Height = 150 },
+                new CollisionSurface(){ Position = new Vector2(3650, 1430), Width = 300, Height = 150 },
+                new CollisionSurface(){ Position = new Vector2(1400, 1860), Width = 1000, Height = 150 },
+                new CollisionSurface(){ Position = new Vector2(3900, 1430), Width = 600, Height = 150 },
+                new CollisionSurface(){ Position = new Vector2(4400, 1550), Width = 100, Height = 600 },
+                new CollisionSurface(){ Position = new Vector2(4500, 2070), Width = 800, Height = 150 },
+                new CollisionSurface(){ Position = new Vector2(5300, 2070), Width = 15000, Height = 150 },
 
                 //BOUNCE
-                new CollisionSurface(){ Position = new Vector2(4470, 1870), Width = 280, Height = 230, BounceVelocityX = -500.0f, BounceVelocityY = -8500.0f, CollisionType = TileCollision.Bounce },
-                new CollisionSurface(){ Position = new Vector2(4970, 2000), Width = 280, Height = 230, BounceVelocityX = -900.0f, BounceVelocityY = -4000.0f, CollisionType = TileCollision.Bounce },
+                new CollisionBounce(){ Position = new Vector2(4470, 1870), Width = 280, Height = 230, BounceVelocityX = -500.0f, BounceVelocityY = -8500.0f },
+                new CollisionBounce(){ Position = new Vector2(4970, 2000), Width = 280, Height = 230, BounceVelocityX = -900.0f, BounceVelocityY = -4000.0f },
 
         };
 
         public Sprite[] Interactive =
         {
-            new Pickup { AssetName = "lifeblood", Position = new Vector2(1000, 1800), Value = 1, PickupType = PickupItem.Lifeblood },
-            new Pickup { AssetName = "lifeblood", Position = new Vector2(1500, 1700), Value = 1, PickupType = PickupItem.Lifeblood },
-            new Pickup { AssetName = "lifeblood", Position = new Vector2(3300, 1300), Value = 1, PickupType = PickupItem.Lifeblood },
-            new Pickup { AssetName = "lifeblood", Position = new Vector2(4000, 1200), Value = 5, PickupType = PickupItem.Lifeblood },
+            new PickupLifeblood { Position = new Vector2(1000, 1800), Value = 1 },
+            new PickupLifeblood { Position = new Vector2(1500, 1700), Value = 1 },
+            new PickupLifeblood { Position = new Vector2(3300, 1300), Value = 1 },
+            new PickupLifeblood { Position = new Vector2(4000, 1200), Value = 5 },
         };
     }
 }

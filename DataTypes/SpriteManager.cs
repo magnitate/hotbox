@@ -50,7 +50,7 @@ namespace DataTypes
 
         public override Rectangle BoundingBox()
         {
-            return new Rectangle((int)Position.X - width, (int)Position.Y - height, width * 2, height * 2);
+            return new Rectangle((int)Position.X - width, (int)Position.Y - height, (int)(width * 1.5), height * 2);
         }
 
         public void AddAnimation(string name, int row, int frames, AnimationClass animation)

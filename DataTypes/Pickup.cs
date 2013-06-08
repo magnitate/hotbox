@@ -26,15 +26,12 @@ namespace DataTypes
         public bool Active;
         public PickupItem PickupType;
 
-        public int Value;
-
         private float jitterAmount = 0.75f;
         private Random rand;
-        private Vector2 PositionAdjustment;
+        protected Vector2 PositionAdjustment;
 
         public Pickup()
         {
-            AssetName = "lifeblood";
             Colour = Color.White;
             Active = true;
         }
@@ -49,8 +46,7 @@ namespace DataTypes
             //TODO bob up and down
             if (Active)
             {
-                Random tempRand = new Random();
-                rand = new Random(tempRand.Next(1000));
+                rand = new Random();
                 PositionAdjustment = Position;
                 PositionAdjustment.X += rand.Next(-100, 100) * jitterAmount * (float)gameTime.ElapsedGameTime.TotalSeconds;
                 PositionAdjustment.Y += rand.Next(-100, 100) * jitterAmount * (float)gameTime.ElapsedGameTime.TotalSeconds;
