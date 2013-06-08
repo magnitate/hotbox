@@ -57,11 +57,7 @@ namespace DataTypes
         public int Height;
         public bool Visible;
 
-        //private float bottomSlopePoint = 0;
         public TileCollision CollisionType;
-
-        //public float SlideBoost = 0.0f;
-        //public float SlideDirection = 0.0f;
 
         public CollisionSurface()
         {
@@ -70,12 +66,6 @@ namespace DataTypes
             Colour = Color.White;
             Visible = true;
         }
-
-        /*public float BottomSlopePoint
-        {
-            get { return bottomSlopePoint; }
-            set { bottomSlopePoint = value; }
-        }*/
 
         public override Rectangle BoundingBox()
         {

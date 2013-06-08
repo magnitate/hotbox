@@ -497,8 +497,8 @@ namespace Hotbox.GameObject
                 // Begin or continue a jump
                 if ((!wasJumping && (IsOnGround | IsOnWall)) || jumpTime > 0.0f)
                 {
-                    //if (jumpTime == 0.0f)
-                    //    jumpSound.Play();
+                    if( jumpTime == 0.0f)
+                        AudioManager.PlaySfxCue("Jump");
                     Rotation = 0.0f;
 
                     isJumping = true;
@@ -687,6 +687,7 @@ namespace Hotbox.GameObject
                                         BounceLaunchVelocityY = bounceTile.BounceVelocityY;
                                     }
 
+                                    //SLIDE PLAYER
                                     if (tile.CollisionType == TileCollision.Conveyor)
                                     {
                                         if (movement != 0)
