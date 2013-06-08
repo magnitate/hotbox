@@ -553,7 +553,7 @@ namespace Hotbox
             //Draws info about each player
             for (int i = 0; i < playerList.Count; i++)
             {
-                spriteBatch.DrawString(gameFont, "Player" + playerList[i].GetPlayerIndex + " Position:" + playerList[i].Position.ToString() + ", Ground: " + playerList[i].IsOnGround.ToString() + ", Falling: " + playerList[i].IsFalling + ", Jumping: " + playerList[i].isJumping + ", Gliding: " + playerList[i].isGliding + ", isCrouching: " + playerList[i].IsCrouching + ", IsAlive: " + playerList[i].IsAlive + ", Lifeblood: " + playerList[i].LifeBloodCount, new Vector2(10, (10 + stringHeight + (stringHeight * i))), Color.DarkRed);
+                spriteBatch.DrawString(gameFont, "Player" + playerList[i].GetPlayerIndex + " Position:" + playerList[i].Position.ToString() + ", Ground: " + playerList[i].IsOnGround.ToString() + ", Falling: " + playerList[i].IsFalling + ", Jumping: " + playerList[i].isJumping + ", Gliding: " + playerList[i].IsGliding + ", isCrouching: " + playerList[i].IsCrouching + ", IsAlive: " + playerList[i].IsAlive + ", Lifeblood: " + playerList[i].LifeBloodCount, new Vector2(10, (10 + stringHeight + (stringHeight * i))), Color.DarkRed);
             }
         }
 

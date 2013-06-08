@@ -25,24 +25,9 @@ namespace Hotbox.GameObject
         InputAction sprint;
         InputAction crouch;
 
-        public bool IsAlive
-        {
-            get { return isAlive; }
-            set { isAlive = value; }
-        }
-        bool isAlive = true;
-
-        const float ReviveTimeDefault = 2.0f;
-        float reviveTimer = ReviveTimeDefault;
+        //This class is used to keep track of which player
+        //is acting as the medic for the revive
         Player theMedic;
-
-        public bool IsReviving
-        {
-            get { return isReviving; }
-            set { isReviving = value; }
-        }
-
-        bool isReviving = false;
 
         private float previousBottom;
 
@@ -53,7 +38,9 @@ namespace Hotbox.GameObject
         }
         Vector2 velocity;
 
-        // Constants for controling horizontal movement
+        /// <summary>
+        /// Constants for controling horizontal movement
+        /// </summary>
         private const float MoveAcceleration = 13000.0f;
         private const float MaxMoveSpeed = 1750.0f;
         private const float GroundDragFactor = 0.58f; //default 0.48f
@@ -62,7 +49,9 @@ namespace Hotbox.GameObject
         private const float CrouchSlowFactor = 0.5f;
         private const float SprintCrouchSlowFactor = 0.8f;
 
-        // Constants for controlling vertical movement
+        /// <summary>
+        /// Constants for controlling vertical movement
+        /// </summary>
         private const float MaxJumpTime = 0.45f;
         private const float JumpLaunchVelocity = -4500.0f;
         private const float GravityAcceleration = 4500.0f;
@@ -72,10 +61,11 @@ namespace Hotbox.GameObject
         private const float GlideFallFactor = 0.5f;
         private const float GlideMoveFactor = 0.65f;
 
-        // Input configuration
+        /// <summary>
+        /// Input configuration
+        /// </summary>
         private const float MoveStickScale = 1.0f;
         private const float AccelerometerScale = 1.5f;
-        //private const Buttons JumpButton = Buttons.A;
 
         /// <summary>
         /// Gets whether or not the player's feet are on the ground.
@@ -84,52 +74,84 @@ namespace Hotbox.GameObject
         {
             get { return isOnGround; }
         }
-        bool isOnGround;
+        private bool isOnGround;
 
         /// <summary>
-        /// Current user movement input.
+        /// Check variables for the different player states
         /// </summary>
         private float movement;
         private bool isSprinting;
         private bool isCrouching;
         private bool isSliding;
+        private bool isGliding;
+        private bool isBouncing = false;
+        private bool isAlive = true;
+        private bool isReviving = false;
 
+        /// <summary>
+        /// The check variables for jumping
+        /// </summary>
+        private bool wantsToJump;
+        public bool isJumping;
+        private bool wasJumping;
+        private float jumpTime;
+
+        /// <summary>
+        /// Control variables for bouncing
+        /// </summary>
+        private bool wasBouncing;
+        private bool bounceHorizontal;
+        private const float MaxBounceTime = 0.65f;
+        private float bounceTime = 0.0f;
+        //These will be set by the Bounce collision surface
+        private float BounceLaunchVelocityY = 0.0f;
+        private float BounceLaunchVelocityX = 0.0f;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private float SlideMoveFactor = 0.0f;
+        private float SlideDirection = 0.0f;
+
+        /// <summary>
+        /// Checks for if the player is currently alive
+        /// </summary>
+        public bool IsAlive
+        {
+            get { return isAlive; }
+            set { isAlive = value; }
+        }
+
+        /// <summary>
+        /// Check to see if the player is being revived
+        /// </summary>
+        public bool IsReviving
+        {
+            get { return isReviving; }
+            set { isReviving = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if the player is crouching
+        /// </summary>
         public bool IsCrouching
         {
             get { return isCrouching; }
         }
 
-        // Jumping state
-        private bool wantsToJump;
-        public bool isJumping;
-        private bool wasJumping;
-        private float jumpTime;
-        private bool apexReached = false;
-
-        //Bouncing state
-        private bool isBouncing = false;
-        private bool wasBouncing;
-        private bool bounceHorizontal;
-        private const float MaxBounceTime = 0.65f;
-        private float bounceTime = 0.0f;
-        private float BounceLaunchVelocityY = -8500.0f;
-        private float BounceLaunchVelocityX = -500.0f;
-
-        //Sliding state
-        private float SlideMoveFactor = 0.0f;
-        private float SlideDirection = 0.0f;
-
+        /// <summary>
+        /// Checks to see if the player is bouncing
+        /// </summary>
         public bool IsBouncing
         {
             get { return isBouncing; }
-            set { isBouncing = value; }
         }
 
 
-        //Gliding state
-        public bool isGliding;
+        /// <summary>
+        /// Checks if the player is gliding
+        /// </summary>
         private float glideTime;
-
         public bool IsGliding
         {
             get
@@ -141,6 +163,9 @@ namespace Hotbox.GameObject
             }
         }
 
+        /// <summary>
+        /// Check to see whether the player is falling
+        /// </summary>
         public bool IsFalling
         {
             get
@@ -152,9 +177,11 @@ namespace Hotbox.GameObject
             }
         }
 
+        /// <summary>
+        /// Keeps track of whether the player is sliding down a
+        /// wall or not
+        /// </summary>
         private bool isOnWall = false;
-        private CollisionSurface lastWallJumped = null;
-        private CollisionSurface lastWallCollided = null;
         private const float OnWallSlowFactor = 0.5f;
         public bool IsOnWall
         {
@@ -163,6 +190,9 @@ namespace Hotbox.GameObject
         }
 
 
+        /// <summary>
+        /// Stun state control variables and check
+        /// </summary>
         private const float MaxStunTime = 1.0f;
         private float stunTime = 0.0f;
         private bool isStunned = false;
@@ -184,12 +214,21 @@ namespace Hotbox.GameObject
             }
         }
 
+        /// <summary>
+        /// Keeps track of the amount of lifeblood a player picks
+        /// up during the level
+        /// </summary>
         private int lifebloodCount = 0;
-
         public int LifeBloodCount
         {
             get { return lifebloodCount; }
         }
+
+        /// <summary>
+        /// The control variables for reviving
+        /// </summary>
+        const float ReviveTimeDefault = 2.0f;
+        float reviveTimer = ReviveTimeDefault;
 
         public void Revive(GameObject.Player medic)
         {
@@ -298,7 +337,7 @@ namespace Hotbox.GameObject
         /// <summary>
         /// Gets player horizontal movement and jump commands from input.
         /// </summary>
-        public void GetInput(GameTime gameTime, InputState input)
+        private void GetInput(GameTime gameTime, InputState input)
         {          
             int thisPlayer = (int)playerIndex;
             GamePadState gamePadState = input.CurrentGamePadStates[thisPlayer];
@@ -370,7 +409,7 @@ namespace Hotbox.GameObject
         /// <summary>
         /// Updates the player's velocity and position based on input, gravity, etc.
         /// </summary>
-        public void ApplyPhysics(GameTime gameTime, List<Sprite> level)
+        private void ApplyPhysics(GameTime gameTime, List<Sprite> level)
         {
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
@@ -493,7 +532,7 @@ namespace Hotbox.GameObject
             return velocityY;
         }
 
-        public float DoBounceY(float theVelocity, GameTime gameTime)
+        private float DoBounceY(float theVelocity, GameTime gameTime)
         {
             if (isBouncing)
             {
@@ -527,7 +566,7 @@ namespace Hotbox.GameObject
             return theVelocity;
         }
         
-        public float DoBounceX(float theVelocity, GameTime gameTime)
+        private float DoBounceX(float theVelocity, GameTime gameTime)
         {
             if (isBouncing)
             {
@@ -712,7 +751,7 @@ namespace Hotbox.GameObject
                                 //If we crossed the top of a tile, we are now bouncing.
                                 if (previousBottom <= tileBounds.Top)
                                 {
-                                    IsBouncing = true;
+                                    isBouncing = true;
                                     BounceLaunchVelocityX = tile.BounceVelocityX;
                                     BounceLaunchVelocityY = tile.BounceVelocityY;
                                 }
@@ -776,7 +815,7 @@ namespace Hotbox.GameObject
             previousBottom = bounds.Bottom;
         }
 
-        public void GetPickups(List<Sprite> pickups)
+        private void GetPickups(List<Sprite> pickups)
         {
             foreach (Pickup p in pickups)
             {
@@ -786,6 +825,7 @@ namespace Hotbox.GameObject
                     {
                         p.Active = false;
                         lifebloodCount += p.Value;
+                        AudioManager.PlaySfxCue("Bing");
                     }
                 }
             }
