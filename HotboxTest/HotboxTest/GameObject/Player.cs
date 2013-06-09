@@ -801,7 +801,7 @@ namespace Hotbox.GameObject
                 theSpriteBatch.Draw(mSpriteTexture, Position, Animations[Animation].Rectangles[FrameIndex], Animations[Animation].Colour, Rotation, Origin, Scale, Animations[Animation].SpriteEffect, 0f);
                 
                 //DRAWS THE PLAYERS BOUNDING BOX
-                //theSpriteBatch.Draw(boundingTexture, BoundingBox(), Color.Yellow);
+                theSpriteBatch.Draw(boundingTexture, BoundingBox(), Color.Yellow);
             }
         }
     }

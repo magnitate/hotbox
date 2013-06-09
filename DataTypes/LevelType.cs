@@ -158,9 +158,9 @@ namespace DataTypes
 
         public Sprite[] Interactive =
         {
-            new PickupLifeblood { Position = new Vector2(1000, 1800), Value = 1 },
-            new PickupLifeblood { Position = new Vector2(1500, 1700), Value = 1 },
-            new PickupLifeblood { Position = new Vector2(3300, 1300), Value = 1 },
+            new PickupLifeblood { Position = new Vector2(1000, 1800) },
+            new PickupLifeblood { Position = new Vector2(1500, 1700) },
+            new PickupLifeblood { Position = new Vector2(3300, 1300) },
             new PickupLifeblood { Position = new Vector2(4000, 1200), Value = 5 },
         };
     }

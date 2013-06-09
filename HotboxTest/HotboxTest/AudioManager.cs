@@ -26,7 +26,7 @@ namespace Hotbox
         private AudioCategory bgmCategory;  //bgm category
         private AudioCategory sfxCategory;  //sfx category
 
-        private float bgmVolume = 0.0f;
+        private float bgmVolume = 1.0f;
         /// <summary>
         /// Sets the volume between 0 and 100.
         /// </summary>
@@ -41,7 +41,7 @@ namespace Hotbox
             audioManager.SetBgmVolume((volume / 100));
         }
 
-        private float sfxVolume = 0.35f;
+        private float sfxVolume = 1.0f;
         /// <summary>
         /// Sets the volume between 0 and 100.
         /// </summary>
