@@ -136,6 +136,8 @@ namespace DataTypes
                 new CollisionSurface(){ Position = new Vector2(50, 900), Width = 150, Height = 1000 },
                 new CollisionSurface(){ Position = new Vector2(450, 1100), Width = 150, Height = 500, CollisionType = TileCollision.Walljump },
 
+                new CollisionMoving(){ Position = new Vector2(1850, 1250), Width = 150, Height = 150, Duration = 10, MovementCycle = MovementPattern.Loop, Waypoints = new Waypoint[]{ new Waypoint(){ Position = new Vector2(1850, 1250), pauseDuration = 2 }, new Waypoint(){ Position = new Vector2(2250, 1250), pauseDuration = 2 }, new Waypoint(){ Position = new Vector2(2250, 1050), pauseDuration = 2 } } },
+
                 new CollisionConveyor(){ Position = new Vector2(750, 1250), Width = 1000, Height = 150, SlideBoost = 0.5f },
 
                 new CollisionSurface(){ Position = new Vector2(1330, 1780), Width = 50, Height = 100 },

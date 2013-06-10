@@ -709,6 +709,13 @@ namespace Hotbox.GameObject
                                     if (tile.CollisionType == TileCollision.Conveyor)
                                         isSliding = true;
 
+                                    if (tile.CollisionType == TileCollision.Moving)
+                                    {
+                                        CollisionMoving movingTile = (CollisionMoving)tile;
+                                        if(!movingTile.IsAtWaypoint)
+                                            Position += movingTile.PlatformSpeed;
+                                    }
+
                                     //Perform further collisions with the new bounds.
                                     bounds = BoundingBox();
                                 }

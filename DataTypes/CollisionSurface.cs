@@ -49,6 +49,11 @@ namespace DataTypes
         /// </summary>
         Walljump = 6,
 
+        /// <summary>
+        /// A moving collsion surface will change between 2 waypoints.
+        /// </summary>
+        Moving = 7,
+
     }
 
     public class CollisionSurface : Sprite

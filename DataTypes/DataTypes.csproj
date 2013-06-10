@@ -96,6 +96,7 @@
     <Compile Include="AnimationClass.cs" />
     <Compile Include="CollisionBounce.cs" />
     <Compile Include="CollisionConveyor.cs" />
+    <Compile Include="CollisionMoving.cs" />
     <Compile Include="CollisionSlide.cs" />
     <Compile Include="CollisionSlope.cs" />
     <Compile Include="CollisionSurface.cs" />
