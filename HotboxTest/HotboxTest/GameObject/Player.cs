@@ -712,18 +712,23 @@ namespace Hotbox.GameObject
                                     if (tile.CollisionType == TileCollision.Moving)
                                     {
                                         CollisionMoving movingTile = (CollisionMoving)tile;
-                                        if(!movingTile.IsAtWaypoint)
-                                            Position += movingTile.PlatformSpeed;
+                                        if (!movingTile.IsAtWaypoint)
+                                        {
+                                            if (movingTile.PlatformSpeed.Y > 0)
+                                                Position.X += movingTile.PlatformSpeed.X;
+                                            else
+                                                Position += movingTile.PlatformSpeed;
+                                        }
                                     }
 
                                     //Perform further collisions with the new bounds.
                                     bounds = BoundingBox();
                                 }
                             }
-                            else if (tile.CollisionType == TileCollision.Impassable || tile.CollisionType == TileCollision.Walljump)
+                            else if (tile.CollisionType != TileCollision.Platform)
                             {
                                 // Resolve the collision along the X axis
-                                Position = new Vector2(Position.X + (depth.X - 5), Position.Y);
+                                Position = new Vector2(Position.X + depth.X, Position.Y);
 
                                 if( tile.CollisionType == TileCollision.Walljump)
                                     IsOnWall = true;

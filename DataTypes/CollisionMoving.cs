@@ -36,11 +36,6 @@ namespace DataTypes
         public Vector2 PlatformSpeed;
 
         /// <summary>
-        /// The time taken to travel between two waypoints
-        /// </summary>
-        public float Duration = 1f;
-
-        /// <summary>
         /// The time when 
         /// </summary>
         private double timeSinceLastAct = 0;
@@ -84,7 +79,7 @@ namespace DataTypes
                     else if (MovementCycle == MovementPattern.Loop)
                         waypointIndex = 0;
                 }
-                else if (waypointIndex < 0)
+                else if (waypointIndex < 1)
                 {
                     if (MovementCycle == MovementPattern.Reverse)
                     {
@@ -102,6 +97,9 @@ namespace DataTypes
             }
         }
 
+        /// <summary>
+        /// The index of the next waypoint in the sequence.
+        /// </summary>
         public int NextWaypointIndex
         {
             get
@@ -142,10 +140,10 @@ namespace DataTypes
 
             if (IsAtWaypoint)
             {
-                if (timeSinceLastAct > Waypoints[WaypointIndex].pauseDuration)
+                if (timeSinceLastAct > Waypoints[WaypointIndex].PauseDuration)
                 {
-                    PlatformSpeed.X = ((Waypoints[WaypointIndex].Position.X - Waypoints[NextWaypointIndex].Position.X) / Duration) * -1 * (float)gameTime.ElapsedGameTime.TotalSeconds;
-                    PlatformSpeed.Y = ((Waypoints[WaypointIndex].Position.Y - Waypoints[NextWaypointIndex].Position.Y) / Duration) * -1 * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    PlatformSpeed.X = ((Waypoints[WaypointIndex].Position.X - Waypoints[NextWaypointIndex].Position.X) / Waypoints[WaypointIndex].TravelDuration) * -1 * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    PlatformSpeed.Y = ((Waypoints[WaypointIndex].Position.Y - Waypoints[NextWaypointIndex].Position.Y) / Waypoints[WaypointIndex].TravelDuration) * -1 * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
                     WaypointIndex++;
                     IsAtWaypoint = false;
@@ -154,7 +152,7 @@ namespace DataTypes
             }
             else
             {
-                if (timeSinceLastAct < Duration)
+                if (timeSinceLastAct < Waypoints[WaypointIndex].TravelDuration)
                 {
                     Position += PlatformSpeed;
                 }
@@ -169,7 +167,19 @@ namespace DataTypes
 
     public class Waypoint
     {
+        /// <summary>
+        /// The position of the waypoint
+        /// </summary>
         public Vector2 Position;
-        public float pauseDuration;
+
+        /// <summary>
+        /// The amount of time to wait at the waypoint
+        /// </summary>
+        public float PauseDuration;
+
+        /// <summary>
+        /// The amount of time the platform will take to move from this waypoint to the next
+        /// </summary>
+        public float TravelDuration;
     }
 }

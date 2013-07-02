@@ -96,6 +96,11 @@ namespace DataTypes
                 new Sprite { AssetName = "Tutorial/jumping_post1", Position = new Vector2(1350, 1820) },
                 new Sprite { AssetName = "Tutorial/jumping_post2", Position = new Vector2(2250, 1800) },
                 new Sprite { AssetName = "Tutorial/cart", Position = new Vector2(4670, 1950) },
+                new Sprite { AssetName = "Tutorial/stump1", Position = new Vector2(5400, 2100) },
+                new Sprite { AssetName = "Tutorial/stump2", Position = new Vector2(5570, 2100) },
+                new Sprite { AssetName = "Tutorial/stump3", Position = new Vector2(5880, 2150) },
+                new Sprite { AssetName = "Tutorial/stump4", Position = new Vector2(6170, 2100) },
+                new Sprite { AssetName = "Tutorial/stump5", Position = new Vector2(6270, 2100) },
             };
 
         public Sprite[] Collision = 
@@ -128,6 +133,8 @@ namespace DataTypes
 
                 //cart collision
                 new CollisionSlope(){ Position = new Vector2(4730, 1980), Width = 220, Height = 100, BottomSlopePoint = 4950 },
+
+                new CollisionSlope(){ Position = new Vector2(6700, 1880), Width = 700, Height = 150, BottomSlopePoint = 6700 },
                               
 
 
@@ -136,7 +143,7 @@ namespace DataTypes
                 new CollisionSurface(){ Position = new Vector2(50, 900), Width = 150, Height = 1000 },
                 new CollisionSurface(){ Position = new Vector2(450, 1100), Width = 150, Height = 500, CollisionType = TileCollision.Walljump },
 
-                new CollisionMoving(){ Position = new Vector2(1850, 1250), Width = 150, Height = 150, Duration = 10, MovementCycle = MovementPattern.Loop, Waypoints = new Waypoint[]{ new Waypoint(){ Position = new Vector2(1850, 1250), pauseDuration = 2 }, new Waypoint(){ Position = new Vector2(2250, 1250), pauseDuration = 2 }, new Waypoint(){ Position = new Vector2(2250, 1050), pauseDuration = 2 } } },
+                new CollisionMoving(){ Position = new Vector2(1850, 1250), Width = 150, Height = 150, MovementCycle = MovementPattern.Reverse, Waypoints = new Waypoint[]{ new Waypoint(){ Position = new Vector2(1850, 1250), PauseDuration = 2, TravelDuration = 2 }, new Waypoint(){ Position = new Vector2(2250, 1250), PauseDuration = 0, TravelDuration = 2 }, new Waypoint(){ Position = new Vector2(2250, 1050), PauseDuration = 2, TravelDuration = 2 } } },
 
                 new CollisionConveyor(){ Position = new Vector2(750, 1250), Width = 1000, Height = 150, SlideBoost = 0.5f },
 
@@ -150,11 +157,19 @@ namespace DataTypes
                 new CollisionSurface(){ Position = new Vector2(3900, 1430), Width = 600, Height = 150 },
                 new CollisionSurface(){ Position = new Vector2(4400, 1550), Width = 100, Height = 600 },
                 new CollisionSurface(){ Position = new Vector2(4500, 2070), Width = 800, Height = 150 },
-                new CollisionSurface(){ Position = new Vector2(5300, 2070), Width = 15000, Height = 150 },
+
+                new CollisionSurface(){ Position = new Vector2(5360, 2070), Width = 150, Height = 130 },
+                new CollisionSurface(){ Position = new Vector2(5515, 2040), Width = 180, Height = 180 },
+                new CollisionSurface(){ Position = new Vector2(5845, 2120), Width = 100, Height = 100 },
+                new CollisionSurface(){ Position = new Vector2(6105, 2070), Width = 150, Height = 150 },
+                new CollisionSurface(){ Position = new Vector2(6240, 2015), Width = 180, Height = 205 },
+
+                new CollisionSurface(){ Position = new Vector2(5300, 2200), Width = 1400, Height = 150 },
+                new CollisionSurface(){ Position = new Vector2(6700, 2020), Width = 700, Height = 200 },
 
                 //BOUNCE
                 new CollisionBounce(){ Position = new Vector2(4470, 1870), Width = 280, Height = 230, BounceVelocityX = -500.0f, BounceVelocityY = -8500.0f },
-                new CollisionBounce(){ Position = new Vector2(4970, 2000), Width = 280, Height = 230, BounceVelocityX = -900.0f, BounceVelocityY = -4000.0f },
+                //new CollisionBounce(){ Position = new Vector2(4970, 2000), Width = 280, Height = 230, BounceVelocityX = -900.0f, BounceVelocityY = -4000.0f },
 
         };
 
