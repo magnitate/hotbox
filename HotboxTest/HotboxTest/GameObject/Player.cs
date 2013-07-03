@@ -183,11 +183,24 @@ namespace Hotbox.GameObject
         /// wall or not
         /// </summary>
         private bool isOnWall = false;
+        private bool HasWallJumped = false;
         private const float OnWallSlowFactor = 0.5f;
         public bool IsOnWall
         {
             get { return isOnWall; }
             set { isOnWall = value; }
+        }
+
+        CollisionSurface CurrentCollisionSurface;
+        CollisionSurface LastSurfaceJumped;
+        CollisionFace CollisionOnFace; 
+
+        private enum CollisionFace
+        {
+            Top = 0,
+            Right = 1,
+            Bottom = 2,
+            Left = 3
         }
 
 
@@ -434,7 +447,10 @@ namespace Hotbox.GameObject
 
             velocity.Y = MathHelper.Clamp(velocity.Y + GravityAcceleration * elapsed, -MaxFallSpeed, MaxFallSpeed);
 
-            velocity.Y = DoJump(velocity.Y, gameTime);
+            if (HasWallJumped)
+                velocity = DoWallJump(velocity, gameTime);
+            else
+                velocity = DoJump(velocity, gameTime);
 
             velocity = DoGlide(velocity, gameTime);
 
@@ -489,11 +505,22 @@ namespace Hotbox.GameObject
         /// A new Y velocity if beginning or continuing a jump.
         /// Otherwise, the existing Y velocity.
         /// </returns>
-        private float DoJump(float velocityY, GameTime gameTime)
+        private Vector2 DoJump(Vector2 velocity, GameTime gameTime)
         {
             // If the player wants to jump
             if (wantsToJump)
             {
+                if (IsOnWall)
+                {
+                    if (LastSurfaceJumped != CurrentCollisionSurface)
+                    {
+                        LastSurfaceJumped = CurrentCollisionSurface;
+                        HasWallJumped = true;
+                    }
+
+                    return velocity;
+                }
+
                 // Begin or continue a jump
                 if ((!wasJumping && (IsOnGround | IsOnWall)) || jumpTime > 0.0f)
                 {
@@ -515,7 +542,7 @@ namespace Hotbox.GameObject
                 if (0.0f < jumpTime && jumpTime <= MaxJumpTime)
                 {
                     // Fully override the vertical velocity with a power curve that gives players more control over the top of the jump
-                    velocityY = JumpLaunchVelocity * (1.0f - (float)Math.Pow(jumpTime / MaxJumpTime, JumpControlPower));
+                    velocity.Y = JumpLaunchVelocity * (1.0f - (float)Math.Pow(jumpTime / MaxJumpTime, JumpControlPower));
                 }
                 else
                 {
@@ -532,7 +559,50 @@ namespace Hotbox.GameObject
             }
             wasJumping = isJumping;
 
-            return velocityY;
+            return velocity;
+        }
+
+        private Vector2 DoWallJump(Vector2 velocity, GameTime gameTime)
+        {
+            // Begin or continue a jump
+            if ((!wasJumping && (IsOnGround | IsOnWall)) || jumpTime > 0.0f)
+            {
+                if (jumpTime == 0.0f)
+                    AudioManager.PlaySfxCue("Jump");
+                Rotation = 0.0f;
+
+                isJumping = true;
+                jumpTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+                if (Animation.Contains("Left"))
+                    Animation = "LeftJump";
+                else if (Animation.Contains("Right"))
+                    Animation = "RightJump";
+
+            }
+
+            // If we are in the ascent of the jump
+            if (0.0f < jumpTime && jumpTime <= MaxJumpTime)
+            {
+                // Fully override the vertical velocity with a power curve that gives players more control over the top of the jump
+                velocity.Y = JumpLaunchVelocity * (1.0f - (float)Math.Pow(jumpTime / MaxJumpTime, JumpControlPower));
+                velocity.X = 0f;
+                if( CollisionOnFace == CollisionFace.Right)
+                    velocity.X += -1 * MoveAcceleration * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                else
+                    velocity.X += MoveAcceleration * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            }
+            else
+            {
+                // Reached the apex of the jump
+                jumpTime = 0.0f;
+                isJumping = false;
+                HasWallJumped = false;
+            }
+
+            wasJumping = isJumping;
+
+            return velocity;
         }
 
         private float DoBounceY(float theVelocity, GameTime gameTime)
@@ -654,6 +724,7 @@ namespace Hotbox.GameObject
                 if (this.BoundingBox().Intersects(tile.BoundingBox()))
                 {
                     Rectangle tileBounds = tile.BoundingBox();
+                    CurrentCollisionSurface = tile;
 
                     //Sets the colour to a dark blue when you are colliding with the surface
                     if( tile.Colour != Color.Transparent)
@@ -730,8 +801,15 @@ namespace Hotbox.GameObject
                                 // Resolve the collision along the X axis
                                 Position = new Vector2(Position.X + depth.X, Position.Y);
 
-                                if( tile.CollisionType == TileCollision.Walljump)
+                                if (tile.CollisionType == TileCollision.Walljump)
+                                {
                                     IsOnWall = true;
+
+                                    if (tile.Position.X < Position.X)
+                                        CollisionOnFace = CollisionFace.Left;
+                                    else
+                                        CollisionOnFace = CollisionFace.Right;
+                                }
 
                                 //Perform further collisions with the new bounds.
                                 bounds = BoundingBox();
